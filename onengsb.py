@@ -42,7 +42,7 @@ settings = {
     "autoLeave": False,
     "autoRead": False,
     "lang":"JP",
-    "detectMention": True,
+    "detectMention": False,
     "changeGroupPicture":[],
     "Sambutan": False,
     "Sider":{},
@@ -186,7 +186,7 @@ def backupData():
         return False
 
 def helpmessage():
-    helpMessage = "╔══[нєℓρ мєѕѕαgє]" + "\n" + \
+    helpMessage = "╔══[☢ ŦΣÄM ƉØÑØVÄÑ ☢]" + "\n" + \
                   "╠ Help" + "\n" + \
                   "╠ Translate" + "\n" + \
                   "╠ TextToSpeech" + "\n" + \
@@ -248,11 +248,11 @@ def helpmessage():
                   "╠ SearchLyric「Search」" + "\n" + \
                   "╠ SearchImage「Search」" + "\n" + \
                   "╠ ScreenshootWebsite「LinkURL」" + "\n" + \
-                  "╚══[     Ｈｅｌｌｏ Ｗｏｒｌｄ      ]"
+                  "╚══[☢ ŦΣÄM ƉØÑØVÄÑ ☢]"
     return helpMessage
     
 def helptexttospeech():
-    helpTextToSpeech =   "╔══[ T E X T   T O   S P E E C H ]" + "\n" + \
+    helpTextToSpeech =   "╔══[☢ ŦΣÄM ƉØÑØVÄÑ ☢]" + "\n" + \
                          "╠ af : Afrikaans" + "\n" + \
                          "╠ sq : Albanian" + "\n" + \
                          "╠ ar : Arabic" + "\n" + \
@@ -307,7 +307,7 @@ def helptexttospeech():
                          "╠ vi : Vietnamese" + "\n" + \
                          "╠ cy : Welsh" + "\n" + \
                          "╚══[ Jangan Typo ]" + "\n" + "\n\n" + \
-                          "Contoh : ˢᴬᵞ-ᴵᴰ ᶠᴱᴺᴰᵞ ᴶᴱᴸᴱˣ"
+                          "Contoh : IDLine 2000m."
     return helpTextToSpeech
     
 def helptranslate():
@@ -419,7 +419,7 @@ def helptranslate():
                        "╠ fil : Filipino" + "\n" + \
                        "╠ he : Hebrew" + "\n" + \
                        "╚══[ Jangan Typo ]" + "\n" + "\n\n" + \
-                         "Contoh : ˢᴬᵞ-ᴵᴰ ᶠᴱᴺᴰᵞ ᴶᴱᴸᴱˣ"
+                         "Contoh : IDline 2000m."
     return helpTranslate
 #==============================================================================#
 def lineBot(op):
@@ -430,7 +430,7 @@ def lineBot(op):
         if op.type == 5:
             print ("[ 5 ] NOTIFIED ADD CONTACT")
             if settings["autoAdd"] == True:
-                line.sendMessage(op.param1, "Halo {} terimakasih telah menambahkan saya sebagai teman :D".format(str(line.getContact(op.param1).displayName)))
+                line.sendMessage(op.param1, "แอดมาทำไม:D".format(str(line.getContact(op.param1).displayName)))
         if op.type == 13:
             print ("[ 13 ] NOTIFIED INVITE GROUP")
             group = line.getGroup(op.param1)
@@ -461,7 +461,7 @@ def lineBot(op):
                 if text.lower() == 'help':
                     helpMessage = helpmessage()
                     line.sendMessage(to, str(helpMessage))
-                    line.sendContact(to, "u0a00a391145594006b682770275d06f0")
+                    line.sendContact(to, "u283825ccd9c7b996bbe31c312a80489c")
                 elif text.lower() == 'texttospeech':
                     helpTextToSpeech = helptexttospeech()
                     line.sendMessage(to, str(helpTextToSpeech))
@@ -471,12 +471,11 @@ def lineBot(op):
 #==============================================================================#
                 elif text.lower() == 'speed':
                     start = time.time()
-                    line.sendMessage(to, "ρℓєα¢є ωαιтιиg")
+                    line.sendMessage(to, "☢ ŦΣÄM ƉØÑØVÄÑ ☢")
                     elapsed_time = time.time() - start
                     line.sendMessage(to,format(str(elapsed_time)))
                 elif text.lower() == 'restart':
-                    line.sendMessage(to, "ℓєα¢є ωαιтιиg")
-                    line.sendMessage(to, "∂σиє яєѕтαятιиg")
+                    line.sendMessage(to, "Please....")
                     restartBot()
                 elif text.lower() == 'runtime':
                     timeNow = time.time()
@@ -486,7 +485,7 @@ def lineBot(op):
                 elif text.lower() == 'about':
                     try:
                         arr = []
-                        owner = "u0a00a391145594006b682770275d06f0"
+                        owner = "u283825ccd9c7b996bbe31c312a80489c"
                         creator = line.getContact(owner)
                         contact = line.getContact(lineMID)
                         grouplist = line.getGroupIdsJoined()
@@ -2552,7 +2551,7 @@ def lineBot(op):
                         for mention in mentionees:
                             if lineMID in mention["M"]:
                               if settings["detectMention"] == True:
-                                 sendMention(receiver, sender, "", " \nнα∂ιя вσѕ ")
+                                 sendMention(receiver, sender, "", "????")
 
         if op.type == 17:
            print ("MEMBER JOIN TO GROUP")
