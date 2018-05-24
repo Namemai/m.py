@@ -16,15 +16,13 @@ Cara Install Self Bot :
 - pip3 install pytz`
 - pip3 install humanfriendl`
 - pip3 install googletrans
-- git clone https://github.com/Nadyatjia/BotLinePython3`
+- git clone https://github.com/maxgaza23/Max
 - cd Max
-- python3 onengsb.py
+- python3 Max.py
 - 
 - 
 
 By@ MaxGie ☢ ŦΣÄM ƉØÑØVÄÑ ☢.
 ------
-- `Add My ID LINE : 2000m. . (pake titik)`
-
-Thx To :
+- Add My ID LINE : 2000m. . (pake titik)
 ------
