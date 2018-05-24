@@ -4,10 +4,8 @@ SELF BOT PYTHON3.
 -
 Cara Install Self Bot :
 -----------------
-- apt update
-- apt upgrade
-- apt install git
-- apt install python3-pip
+- pkg install git
+- pkg install python3-pip
 - pip3 install rsa
 - pip3 install thrift==0.11.0
 - pip3 install requests
