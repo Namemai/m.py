@@ -14,7 +14,7 @@ Cara Install Self Bot :
 - pip3 install pytz`
 - pip3 install humanfriendl`
 - pip3 install googletrans
-- git clone https://github.com/Redsamuri/py3bot.git
+- git clone https://github.com/redsamuri5/pyt3bot.git
 - cd py3bot
 - python3 Redpy3.py
 - 
