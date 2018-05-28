@@ -14,13 +14,13 @@ Cara Install Self Bot :
 - pip3 install pytz`
 - pip3 install humanfriendl`
 - pip3 install googletrans
-- git clone https://github.com/maxgaza23/Max
-- cd Max
-- python3 Max.py
+- git clone https://github.com/Redsamuri/py3bot.git
+- cd py3bot
+- python3 Redpy3.py
 - 
 - 
 
-By@ MaxGie ☢ ŦΣÄM ƉØÑØVÄÑ ☢.
+By@ RED☢SAMURI SELFBOT☢.
 ------
-- Add My ID LINE : 2000m. . (pake titik)
+- Add My ID LINE : samuri5
 ------
