@@ -21,50 +21,50 @@ line = LINE()
 line.log("Auth Token : " + str(line.authToken))
 line.log("Timeline Token : " + str(line.tl.channelAccessToken))
 
-# ki = LINE()
-# ki.log("Auth Token : " + str(ki.authToken))
-# ki.log("Timeline Token : " + str(ki.tl.channelAccessToken))
+ki = LINE()
+ki.log("Auth Token : " + str(ki.authToken))
+ki.log("Timeline Token : " + str(ki.tl.channelAccessToken))
 
-# kk = LINE()
-# kk.log("Auth Token : " + str(kk.authToken))
-# kk.log("Timeline Token : " + str(kk.tl.channelAccessToken))
+kk = LINE()
+kk.log("Auth Token : " + str(kk.authToken))
+kk.log("Timeline Token : " + str(kk.tl.channelAccessToken))
 
-# kc = LINE()
-# kc.log("Auth Token : " + str(kc.authToken))
-# kc.log("Timeline Token : " + str(kc.tl.channelAccessToken))
+kc = LINE()
+kc.log("Auth Token : " + str(kc.authToken))
+kc.log("Timeline Token : " + str(kc.tl.channelAccessToken))
 
-# ke = LINE()
-# ke.log("Auth Token : " + str(ke.authToken))
-# ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
+ke = LINE()
+ke.log("Auth Token : " + str(ke.authToken))
+ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
 
-print ("Login Succes")
+print ("Login ꧁❈§{MAI}§❈꧂")
 
 lineMID = line.profile.mid
 lineProfile = line.getProfile()
 lineSettings = line.getSettings()
 
-# kiMID = ki.profile.mid
-# kiProfile = ki.getProfile()
-# kiSettings = ki.getSettings()
+kiMID = ki.profile.mid
+kiProfile = ki.getProfile()
+kiSettings = ki.getSettings()
 
-# kkMID = kk.profile.mid
-# kkProfile = kk.getProfile()
-# kkSettings = kk.getSettings()
+kkMID = kk.profile.mid
+kkProfile = kk.getProfile()
+kkSettings = kk.getSettings()
 
-# kcMID = kc.profile.mid
-# kcProfile = kc.getProfile()
-# kcSettings = kc.getSettings()
+kcMID = kc.profile.mid
+kcProfile = kc.getProfile()
+kcSettings = kc.getSettings()
 
-# keMID = kc.profile.mid
-# keProfile = kc.getProfile()
-# keSettings = kc.getSettings()
+keMID = kc.profile.mid
+keProfile = kc.getProfile()
+keSettings = kc.getSettings()
 
 
-# oepoll = OEPoll(ke)
-# oepoll = OEPoll(kc)
-# oepoll = OEPoll(kk)
-# oepoll = OEPoll(ki)
+oepoll = OEPoll(ke)
+oepoll = OEPoll(kc)
+oepoll = OEPoll(kk)
+oepoll = OEPoll(ki)
 oepoll = OEPoll(line)
 readOpen = codecs.open("read.json","r","utf-8")
 settingsOpen = codecs.open("temp.json","r","utf-8")
@@ -72,11 +72,11 @@ read = json.load(readOpen)
 settings = json.load(settingsOpen)
 Rfu = [line]
 lineMID = line.getProfile().mid
-# kiMID = ki.getProfile().mid
-# kkMID = kk.getProfile().mid
-# kcMID = kc.getProfile().mid
-# kcMID = ke.getProfile().mid
-# bot1 = line.getProfile().mid
+kiMID = ki.getProfile().mid
+kkMID = kk.getProfile().mid
+kcMID = kc.getProfile().mid
+kcMID = ke.getProfile().mid
+bot1 = line.getProfile().mid
 RfuBot=[lineMID]
 Family=["ufad8bc98e4811b51115039219b8f8faf",lineMID]
 admin=['ufad8bc98e4811b51115039219b8f8faf',lineMID]
@@ -466,7 +466,7 @@ def myhelp():
                   " 【guest off  ➾ ปิดป้องกันสมาชิก】"+ "  \n" + \
                   " 【join on  ➾ เปิดป้องกันคนเข้า】"+ "  \n" + \
                   " 【join off  ➾ ปิดป้องกันคนเข้า】"+ "  \n" + \
-                  "⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️"
+                  "꧁❈§{MAI}§❈꧂"
     return myHelp
 
 
@@ -690,31 +690,31 @@ def lineBot(op):
                 if text is None:
                     return
 #==============================================================================#
-                if text.lower() == 'คำสั่ง':
+                if text.lower() == 'h1':
                     myHelp = myhelp()
                     line.sendMessage(to, str(myHelp))
-                elif text.lower() == 'คำสั่ง2':
+                elif text.lower() == 'h2':
                     helpTextToSpeech = helptexttospeech()
                     line.sendMessage(to, str(helpTextToSpeech))
-                elif text.lower() == 'คำสั่ง3':
+                elif text.lower() == 'h3':
                     helpLanguange = helplanguange()
                     line.sendMessage(to, str(helpLanguange))
 #==============================================================================#
                 elif text.lower() == 'Sp':
                     start = time.time()
-                    line.sendMessage(to, "   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ ")
+                    line.sendMessage(to, "   ꧁❈§{MAI}§❈꧂ ")
                     elapsed_time = time.time() - start
                     line.sendMessage(to,format(str(elapsed_time)))	
                 elif text.lower() == 'sp':
                     start = time.time()
-                    line.sendMessage(to, "   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ ")
+                    line.sendMessage(to, "   ꧁❈§{MAI}§❈꧂ ")
                     elapsed_time = time.time() - start
                     line.sendMessage(to,format(str(elapsed_time)))						
                 elif text.lower() == 'รีบูส':
                     line.sendMessage(to, "กรุณาล็อคอินลิ้งค์ใหม่.")
 #                    line.sendMessage(to, "Success Restarting.")
                     restartBot()
-                elif text.lower() == 'เช็คออน์':
+                elif text.lower() == 'ออน':
                     timeNow = time.time()
                     runtime = timeNow - botStart
                     runtime = format_timespan(runtime)
@@ -728,7 +728,7 @@ def lineBot(op):
                         grouplist = line.getGroupIdsJoined()
                         contactlist = line.getAllContactIds()
                         blockedlist = line.getBlockedContactIds()
-                        ret_ = "   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ "
+                        ret_ = "   ꧁❈§{MAI}§❈꧂ "
                         ret_ += "\nชื่อ ไลน์คุณ ✈️ {}".format(contact.displayName)
                         ret_ += "\nรายการกลุ่ม ✈️  {}".format(str(len(grouplist)))
                         ret_ += "\nรายการเพื่อน ✈️  {}".format(str(len(contactlist)))
@@ -742,8 +742,7 @@ def lineBot(op):
 #==============================================================================#
                 elif text.lower() == 'เช็คตั้งค่า':
                     try:
-                        ret_ = "      ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ "
-
+                        ret_ = "      ꧁❈§{MAI}§❈꧂"
                         if settings["autoJoin"] == True: ret_ += "\nเข้าห้องออโต้ ↹ เปิด "
                         else: ret_ += "\nเข้าห้องออโต้ ↹ ปิด"
                         if settings["detectMention"] == True: ret_ += "\nข้อความแท็ก ↹ เปิด"
