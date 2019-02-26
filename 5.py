@@ -2233,9 +2233,7 @@ def lineBot(op):
 
                 elif msg.text in ["ออก"]:
                     if msg.toType == 2:
-                        ginfo = line.getGroup(receiver)
                         try:
-                            line.leaveGroup(receiver)
                             ki.leaveGroup(receiver)
                             kk.leaveGroup(receiver)
                             kc.leaveGroup(receiver)
@@ -2243,6 +2241,22 @@ def lineBot(op):
                         except:
                             pass
 
+                elif text.lower() in ["เข้ามา"]:    
+                    G = line.getGroup(msg.to)
+                    ginfo = line.getGroup(msg.to)
+                    G.preventedJoinByTicket = False
+                    line.updateGroup(G)
+                    invsend = 0
+                    Ticket = line.reissueGroupTicket(msg.to)
+                    ki.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    kk.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    kc.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    ke.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = line.getGroup(msg.to)
+                    G.preventedJoinByTicket = True
+                    line.updateGroup(G)
+                    G.preventedJoinByTicket(G)
+                    line.updateGroup(G)
 
                 elif msg.text in ["แท็กเปิด"]:
                     settings["detectMention"] = True
@@ -2395,7 +2409,7 @@ def lineBot(op):
                     line.sendMessage(msg.to,"ทำการลบัญชีดำทั้งหมดเรียบร้อย")
                     print ("Clear Ban")
 
-                elif text.lower() == 'Sai':
+                elif text.lower() == 'm on':
                     if msg.toType == 2:
                         group = line.getGroup(to)
                         group.preventedJoinByTicket = False
