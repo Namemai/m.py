@@ -49,18 +49,6 @@ k7 = LINE()
 k7.log("Auth Token : " + str(k7.authToken))
 k7.log("Timeline Token : " + str(k7.tl.channelAccessToken))
 
-k8 = LINE()
-k8.log("Auth Token : " + str(k8.authToken))
-k8.log("Timeline Token : " + str(k8.tl.channelAccessToken))
-
-k9 = LINE()
-k9.log("Auth Token : " + str(k9.authToken))
-k9.log("Timeline Token : " + str(k9.tl.channelAccessToken))
-
-k10 = LINE()
-k10.log("Auth Token : " + str(k10.authToken))
-k10.log("Timeline Token : " + str(k10.tl.channelAccessToken))
-
 
 print ("Login by꧁❈§{MAI}§❈꧂")
 
@@ -96,21 +84,6 @@ k7MID = k7.profile.mid
 k7Profile = k7.getProfile()
 k7Settings = k7.getSettings()
 
-k8MID = k8.profile.mid
-k8Profile = k8.getProfile()
-k8Settings = k8.getSettings()
-
-k9MID = k9.profile.mid
-k9Profile = k9.getProfile()
-k9Settings = k9.getSettings()
-
-k10MID = k10.profile.mid
-k10Profile = k10.getProfile()
-k10Settings = k10.getSettings()
-
-oepoll = OEPoll(k10)
-oepoll = OEPoll(k9)
-oepoll = OEPoll(k8)
 oepoll = OEPoll(k7)
 oepoll = OEPoll(k6)
 oepoll = OEPoll(k5)
@@ -132,9 +105,6 @@ keMID = ke.getProfile().mid
 k5MID = k5.getProfile().mid
 k6MID = k6.getProfile().mid
 k7MID = k7.getProfile().mid
-k8MID = k8.getProfile().mid
-k9MID = k9.getProfile().mid
-k10MID = k10.getProfile().mid
 
 RfuBot=[lineMID]
 Family=["u05a8619c623960b67de73061c74e212e",lineMID]
@@ -511,7 +481,7 @@ def myhelp():
                   " 【Spam  on +เลข+ข้อความ】  ➾ "+ "  \n" + \
                   " 【ล้างดำ  ➾ ล้างบชดำ】"+ "  \n" + \
                   " 【เข้ามา.  ➾ สั่งคลิ้กเข้า】"+ "  \n" + \
-                  " 【1-10 @  ➾ สั่งคลิ้กเตะ】"+ "  \n" + \
+                  " 【1-7 @  ➾ สั่งคลิ้กเตะ】"+ "  \n" + \
                   " 【บิน.  ➾ สั่งคลิ้กบิน】"+ "  \n" + \
                   " 【p on  ➾ เปิดป้องกัน】"+ "  \n" + \
                   " 【p off  ➾ ปิดป้องกัน】"+ "  \n" + \
@@ -599,13 +569,6 @@ def lineBot(op):
                         k6.sendContact(to, k6MID)
                         k7.sendMessage(msg.to,"➲ 7  มาครับเจ้านาย")
                         k7.sendContact(to, k7MID)
-                        k8.sendMessage(msg.to,"➲ 8  มาครับเจ้านาย")
-                        k8.sendContact(to, k8MID)
-                        k9.sendMessage(msg.to,"➲ 9  มาครับเจ้านาย")
-                        k9.sendContact(to, k9MID)
-                        k10.sendMessage(msg.to,"➲ 10  มาครับเจ้านาย")
-                        k10.sendContact(to, k10MID)
-                        k10.sendMessage(msg.to,"➲   มาครบ10ตัวครับเจ้านาย")
 #==============================================================================#
                 elif text.lower() == 'Sp':
                     start = time.time()
@@ -1482,9 +1445,6 @@ def lineBot(op):
                             k5.leaveGroup(receiver)
                             k6.leaveGroup(receiver)
                             k7.leaveGroup(receiver)
-                            k8.leaveGroup(receiver)
-                            k9.leaveGroup(receiver)
-                            k10.leaveGroup(receiver)
                         except:
                             pass
 
@@ -1661,12 +1621,6 @@ def lineBot(op):
                         time.sleep(0.01)
                         k7.acceptGroupInvitationByTicket(to,format(str(ticket)))
                         time.sleep(0.01)
-                        k8.acceptGroupInvitationByTicket(to,format(str(ticket)))
-                        time.sleep(0.01)
-                        k9.acceptGroupInvitationByTicket(to,format(str(ticket)))
-                        time.sleep(0.01)
-                        k10.acceptGroupInvitationByTicket(to,format(str(ticket)))
-                        time.sleep(0.01)
                         group.preventedJoinByTicket = True
                         line.updateGroup(group)
                         print ("꧁❈§{MAI}+{—••[>ᴜɴʙᴀʟʟ<]••—}§❈꧂ ")
@@ -1788,44 +1742,6 @@ def lineBot(op):
                                print ("คลิ้ก7เตะ")
                            except:
                                k7.sendMessage(msg.to,"จำกัด")
-                elif '8 ' in text.lower():
-                       targets = []
-                       key = eval(msg.contentMetadata["MENTION"])
-                       key["MENTIONEES"] [0] ["M"]
-                       for x in key["MENTIONEES"]:
-                           targets.append(x["M"])
-                       for target in targets:
-                           try:
-                               k8.kickoutFromGroup(msg.to,[target])
-                               print ("คลิ้ก8เตะ")
-                           except:
-                               k8.sendMessage(msg.to,"จำกัด")
-
-                elif '9 ' in text.lower():
-                       targets = []
-                       key = eval(msg.contentMetadata["MENTION"])
-                       key["MENTIONEES"] [0] ["M"]
-                       for x in key["MENTIONEES"]:
-                           targets.append(x["M"])
-                       for target in targets:
-                           try:
-                               k9.kickoutFromGroup(msg.to,[target])
-                               print ("คลิ้ก9เตะ")
-                           except:
-                               k9.sendMessage(msg.to,"จำกัด")
-
-                elif '10 ' in text.lower():
-                       targets = []
-                       key = eval(msg.contentMetadata["MENTION"])
-                       key["MENTIONEES"] [0] ["M"]
-                       for x in key["MENTIONEES"]:
-                           targets.append(x["M"])
-                       for target in targets:
-                           try:
-                               k10.kickoutFromGroup(msg.to,[target])
-                               print ("คลิ้ก10เตะ")
-                           except:
-                               k10.sendMessage(msg.to,"จำกัด")
 
                 elif 'เชิญ' in text.lower():
                        targets = []
@@ -1934,9 +1850,6 @@ def lineBot(op):
                                 ki.removeAllMessages(op.param2)
                                 k6.removeAllMessages(op.param2)
                                 k7.removeAllMessages(op.param2)
-                                k8.removeAllMessages(op.param2)
-                                k9.removeAllMessages(op.param2)
-                                k10.removeAllMessages(op.param2)
                                 line.sendMessage(msg.to,"ลบทุกการแชทเรียบร้อย")
                             except:
                                 pass
@@ -1951,9 +1864,6 @@ def lineBot(op):
                         k5.leaveGroup(msg.to)
                         k6.leaveGroup(msg.to)
                         k7.leaveGroup(msg.to)
-                        k8.leaveGroup(msg.to)
-                        k9.leaveGroup(msg.to)
-                        k10.leaveGroup(msg.to)
                         print ("Kicker Leave")
 
                 elif text.lower() == "ออกแชทรวม":
@@ -1986,23 +1896,32 @@ def lineBot(op):
                         line.sendMessage(msg.to,"ok คุณได้เปลี่ยนแล้ว เป็น  " + string)
                         print ("Update Bio Succes")
 
-                elif "คลิ้ก: " in text.lower():
+                elif "ชื่อคลิ้ก: " in text.lower():
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
                         profile_A = ki.getProfile()
                         profile_B = kk.getProfile()
                         profile_C = kc.getProfile()
-                        profile_D = ke.getProfile()                        
+                        profile_D = ke.getProfile()
+                        profile_5 = k5.getProfile()
+                        profile_6 = k6.getProfile()
+                        profile_7 = k7.getProfile()
                         profile_A.displayName = string
                         profile_B.displayName = string
                         profile_C.displayName = string
-                        profile_D.displayName = string                        
+                        profile_D.displayName = string
+                        profile_5.displayName = string
+                        profile_6.displayName = string
+                        profile_7.displayName = string
                         ki.updateProfile(profile_A)
                         kk.updateProfile(profile_B)
                         kc.updateProfile(profile_C)
-                        ke.updateProfile(profile_D)                        
-                        line.sendMessage(msg.to,"คุณได้เปลี่ยนชื่อคลิ้กเกอร์ เป็น   " + string)
+                        ke.updateProfile(profile_D)
+                        k5.updateProfile(profile_5)
+                        k6.updateProfile(profile_6)
+                        k7.updateProfile(profile_7)
+                        line.sendMessage(msg.to,"เปลี่ยนชื่อคลิ้กเกอร์ เป็น   " + string)
                         print ("Update Name All Kicker")
 
                 elif "ตัสคลิ้ก: " in text.lower():
@@ -2012,19 +1931,28 @@ def lineBot(op):
                         profile_A = ki.getProfile()
                         profile_B = kk.getProfile()
                         profile_C = kc.getProfile()
-                        profile_D = kc.getProfile()                        
+                        profile_D = kc.getProfile()
+                        profile_5 = k5.getProfile()
+                        profile_6 = k6.getProfile()
+                        profile_7 = k7.getProfile()
                         profile_A.statusMessage = string
                         profile_B.statusMessage = string
                         profile_C.statusMessage = string
-                        profile_D.statusMessage = string                        
+                        profile_D.statusMessage = string
+                        profile_5.statusMessage = string
+                        profile_6.statusMessage = string
+                        profile_7.statusMessage = string
                         ki.updateProfile(profile_A)
                         kk.updateProfile(profile_B)
                         kc.updateProfile(profile_C)
-                        ke.updateProfile(profile_D)                        
-                        line.sendMessage(msg.to,"Update Bio All Kicker to : " + string)
+                        ke.updateProfile(profile_D)
+                        k5.updateProfile(profile_5)
+                        k6.updateProfile(profile_6)
+                        k7.updateProfile(profile_7)
+                        line.sendMessage(msg.to,"เปลี่ยนตัสคลิ้กเกอร์ เป็น : " + string)
                         print ("Update Bio All Kicker")
 
-                elif text.lower() == "sai":
+                elif text.lower() == ".":
                     if msg._from in Family:
                         profile = ki.getProfile()
                         text = profile.displayName + ""
@@ -2037,7 +1965,16 @@ def lineBot(op):
                         kc.sendMessage(to, text)
                         profile = ke.getProfile()                        
                         text = profile.displayName + ""
-                        ke.sendMessage(to, text)                        
+                        ke.sendMessage(to, text)
+                        profile = k5.getProfile()                        
+                        text = profile.displayName + ""
+                        k5.sendMessage(to, text)
+                        profile = k6.getProfile()                        
+                        text = profile.displayName + ""
+                        k6.sendMessage(to, text)
+                        profile = k7.getProfile()                        
+                        text = profile.displayName + ""
+                        k7.sendMessage(to, text)
                         print ("สั่งคลิ้กเข้า")
 
   
@@ -2465,7 +2402,7 @@ def lineBot(op):
                     stk_id = msg.contentMetadata['STKID']
                     stk_ver = msg.contentMetadata['STKVER']
                     pkg_id = msg.contentMetadata['STKPKGID']
-                    ret_ = "    ꧁❈§{MAI}+{—••[>ᴜɴʙᴀʟʟ<]••—}§❈꧂"
+                    ret_ = "    ꧁❈§{MAI§❈꧂"
                     ret_ += "\nSTICKER ID : {}".format(stk_id)
                     ret_ += "\nSTICKER PACKAGES ID : {}".format(pkg_id)
                     ret_ += "\nSTICKER VERSION : {}".format(stk_ver)
@@ -2505,12 +2442,6 @@ def lineBot(op):
                   time.sleep(0.01)
                   k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
-                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01) 
                   G.preventedJoinByTicket = True
                   line.updateGroup(G)
                   settings["blacklist"][op.param2] = True
@@ -2537,12 +2468,6 @@ def lineBot(op):
                   k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   G.preventedJoinByTicket = True
                   random.choice(Rfu).updateGroup(G)
@@ -2575,12 +2500,6 @@ def lineBot(op):
                   time.sleep(0.01)
                   k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
-                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
                   G.preventedJoinByTicket = True
                   kk.updateGroup(G)
                   settings["blacklist"][op.param2] = True
@@ -2606,12 +2525,6 @@ def lineBot(op):
                   time.sleep(0.01)
                   k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
-                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
                   G.preventedJoinByTicket = True
                   ki.updateGroup(G)
                   settings["blacklist"][op.param2] = True
@@ -2635,12 +2548,6 @@ def lineBot(op):
                   time.sleep(0.01)
                   k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
-                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
                   G.preventedJoinByTicket = True
                   kk.updateGroup(G)
                   settings["blacklist"][op.param2] = True
@@ -2659,12 +2566,6 @@ def lineBot(op):
                   k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   G.preventedJoinByTicket = True
                   random.choice(Rfu).updateGroup(G)
@@ -2689,12 +2590,6 @@ def lineBot(op):
                   time.sleep(0.01)
                   k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
-                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
                   G.preventedJoinByTicket = True
                   kc.updateGroup(G)
                   settings["blacklist"][op.param2] = True
@@ -2713,12 +2608,6 @@ def lineBot(op):
                   k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   G.ventedJoinByTicket = True
                   random.choice(Rfu).updateGroup(G)
@@ -2743,12 +2632,6 @@ def lineBot(op):
                   time.sleep(0.01)
                   k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
-                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
                   G.preventedJoinByTicket = True
                   ke.updateGroup(G)
                   settings["blacklist"][op.param2] = True
@@ -2767,12 +2650,6 @@ def lineBot(op):
                   k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                  time.sleep(0.01)
-                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   G.preventedJoinByTicket = True
                   random.choice(Rfu).updateGroup(G)
@@ -2793,9 +2670,6 @@ def lineBot(op):
                 k5.leaveRoom(op.param1)
                 k6.leaveRoom(op.param1)
                 k7.leaveRoom(op.param1)
-                k8.leaveRoom(op.param1)
-                k9.leaveRoom(op.param1)
-                k10.leaveRoom(op.param1)
         if op.type == 24:
             if settings['leaveRoom'] == True:
                 line.leaveRoom(op.param1)
@@ -2806,9 +2680,6 @@ def lineBot(op):
                 k5.leaveRoom(op.param1)
                 k6.leaveRoom(op.param1)
                 k7.leaveRoom(op.param1)
-                k8.leaveRoom(op.param1)
-                k9.leaveRoom(op.param1)
-                k10.leaveRoom(op.param1)
 #==============================================================================#
         if op.type == 19:
             try:
@@ -2834,12 +2705,6 @@ def lineBot(op):
                         time.sleep(0.0001)
                         k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
-                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
                         G.preventedJoinByTicket = True
                         line.updateGroup(G)
                     else:
@@ -2863,12 +2728,6 @@ def lineBot(op):
                         k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         G.preventedJoinByTicket = True
                         ki.updateGroup(G)
@@ -2896,12 +2755,6 @@ def lineBot(op):
                         time.sleep(0.0001)
                         k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
-                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
                         G.preventedJoinByTicket = True
                         kk.updateGroup(G)
                     else:
@@ -2925,12 +2778,6 @@ def lineBot(op):
                         k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         G.preventedJoinByTicket = True
                         ki.updateGroup(G)
@@ -2958,12 +2805,6 @@ def lineBot(op):
                         time.sleep(0.0001)
                         k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
-                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
                         G.preventedJoinByTicket = True
                         ki.updateGroup(G)
                     else:
@@ -2985,12 +2826,6 @@ def lineBot(op):
                         k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         G.preventedJoinByTicket = True
                         ki.updateGroup(G)
@@ -3018,12 +2853,6 @@ def lineBot(op):
                         time.sleep(0.0001)
                         k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
-                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
                         G.preventedJoinByTicket = True
                         kk.updateGroup(G)
                     else:
@@ -3047,12 +2876,6 @@ def lineBot(op):
                         k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         G.preventedJoinByTicket = True
                         kc.updateGroup(G)
@@ -3079,12 +2902,6 @@ def lineBot(op):
                         time.sleep(0.0001)
                         k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
-                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
                         G.preventedJoinByTicket = True
                         kc.updateGroup(G)
                     else:
@@ -3108,12 +2925,6 @@ def lineBot(op):
                         k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
-                        time.sleep(0.0001)
-                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         G.preventedJoinByTicket = True
                         ke.updateGroup(G)
@@ -3236,9 +3047,6 @@ def lineBot(op):
                     k5.sendChatChecked(to, msg_id)
                     k6.sendChatChecked(to, msg_id)
                     k7.sendChatChecked(to, msg_id)
-                    k8.sendChatChecked(to, msg_id)
-                    k9.sendChatChecked(to, msg_id)
-                    k10.sendChatChecked(to, msg_id)
                 if to in read["readPoint"]:
                     if sender not in read["ROM"][to]:
                         read["ROM"][to][sender] = True
@@ -3329,7 +3137,7 @@ def lineBot(op):
             except:
                 pass
         if op.type == 55:
-            print ("[ 55 ] ")
+            print ("[ by.Mai ] บอททำงานปกติ ")
             try:
                 if op.param1 in read['readPoint']:
                     if op.param2 in read['readMember'][op.param1]:
