@@ -749,63 +749,6 @@ def lineBot(op):
                 if text is None:
                     return
 
-        if op.type == 55:
-
-            try:
-
-                if RfuCctv['cyduk'][op.param1]==True:
-
-                    if op.param1 in RfuCctv['point']:
-
-                        Name = line.getContact(op.param2).displayName
-
-                        if Name in RfuCctv['sidermem'][op.param1]:
-
-                            pass
-
-                        else:
-
-                            RfuCctv['sidermem'][op.param1] += "\n🔰" + Name
-
-                            pref=['สวัดดีคนอ่าน','แอบอยู่รุ้นะ','ออกมาเด่วนี้','เด่วจับตีก้นเลยนิ','คิดว่าเปนนินจารึไง','เล่นซอนแอบกันหรา','เล่นด้วยได้ไหม','จ๊ะเอ','หาตัวเจอแล้วนร้าาา']
-
-                            line.sendMessage(op.param1, str(random.choice(pref))+' '+Name)
-
-                    else:
-
-                        pass
-
-                else:
-
-                    pass
-
-            except:
-
-                pass
-
-        if op.type == 55:
-
-            try:
-
-                if RfuCctv['cyduk'][op.param1]==True:
-
-                    if op.param1 in RfuCctv['point']:
-
-                        Name = line.getContact(op.param2).displayName
-
-                        if Name in RfuCctv['sidermem'][op.param1]:
-
-                            pass
-
-                        else:
-
-                            RfuCctv['sidermem'][op.param1] += "\n⌬ " + Name + "\n╚════════════════┛"
-
-                            if " " in Name:
-
-                            	nick = Name.split(' ')                            if len(nick) == 2:
-
-                            	line.sendMessage(op.param1, "Nah " 
 #==============================================================================#
                 if text.lower() == 'คำสั่ง':
                     myHelp = myhelp()
@@ -4232,7 +4175,8 @@ def lineBot(op):
                             pass
                         else:
                             RfuCctv['sidermem'][op.param1] += "\n" + Name
-                            pref=['แอบอ่านทำไม ทำไมมะออกมาคุยกันละ  ']
+                            pref=['ทำไมมะออกมาคุยกันละ','สวัดดีคนอ่าน','แอบอยู่รุ้นะ','ออกมาเด่วนี้','เด่วจับตีก้นเลยนิ','คิดว่าเปนนินจารึไง','เล่นซอนแอบกันหรา','เล่นด้วยได้ไหม','จ๊ะเอ','หาตัวเจอแล้วนร้าาา']
+
                             line.sendMessage(op.param1, str(random.choice(pref))+' '+Name)
                     else:
                         pass
