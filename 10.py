@@ -646,6 +646,14 @@ def lineBot(op):
                     except Exception as e:
                         line.sendMessage(msg.to, str(e))
 #==============================================================================#
+                elif msg.text.lower().startswith("พูด "):
+                    sep = text.split(" ")
+                    say = text.replace(sep[0] + " ","")
+                    lang = 'th'
+                    tts = gTTS(text=say, lang=lang)
+                    tts.save("hasil.mp3")
+                    line.sendAudio(msg.to,"hasil.mp3")
+#==============================================================================#
                 elif text.lower() == 'เชคค่า':
                     try:
                         ret_ = "      ꧁❈§{MAI}§❈꧂ "
