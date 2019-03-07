@@ -21,50 +21,50 @@ line = LINE()
 line.log("Auth Token : " + str(line.authToken))
 line.log("Timeline Token : " + str(line.tl.channelAccessToken))
 
-# ki = LINE()
-# ki.log("Auth Token : " + str(ki.authToken))
-# ki.log("Timeline Token : " + str(ki.tl.channelAccessToken))
+ki = LINE()
+ki.log("Auth Token : " + str(ki.authToken))
+ki.log("Timeline Token : " + str(ki.tl.channelAccessToken))
 
-# kk = LINE()
-# kk.log("Auth Token : " + str(kk.authToken))
-# kk.log("Timeline Token : " + str(kk.tl.channelAccessToken))
+kk = LINE()
+kk.log("Auth Token : " + str(kk.authToken))
+kk.log("Timeline Token : " + str(kk.tl.channelAccessToken))
 
-# kc = LINE()
-# kc.log("Auth Token : " + str(kc.authToken))
-# kc.log("Timeline Token : " + str(kc.tl.channelAccessToken))
+kc = LINE()
+kc.log("Auth Token : " + str(kc.authToken))
+kc.log("Timeline Token : " + str(kc.tl.channelAccessToken))
 
-# ke = LINE()
-# ke.log("Auth Token : " + str(ke.authToken))
-# ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
+ke = LINE()
+ke.log("Auth Token : " + str(ke.authToken))
+ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
 
-print ("Login Succes")
+print ("Login by꧁❈§{MAI}§❈꧂")
 
 lineMID = line.profile.mid
 lineProfile = line.getProfile()
 lineSettings = line.getSettings()
 
-# kiMID = ki.profile.mid
-# kiProfile = ki.getProfile()
-# kiSettings = ki.getSettings()
+kiMID = ki.profile.mid
+kiProfile = ki.getProfile()
+kiSettings = ki.getSettings()
 
-# kkMID = kk.profile.mid
-# kkProfile = kk.getProfile()
-# kkSettings = kk.getSettings()
+kkMID = kk.profile.mid
+kkProfile = kk.getProfile()
+kkSettings = kk.getSettings()
 
-# kcMID = kc.profile.mid
-# kcProfile = kc.getProfile()
-# kcSettings = kc.getSettings()
+kcMID = kc.profile.mid
+kcProfile = kc.getProfile()
+kcSettings = kc.getSettings()
 
-# keMID = kc.profile.mid
-# keProfile = kc.getProfile()
-# keSettings = kc.getSettings()
+keMID = kc.profile.mid
+keProfile = kc.getProfile()
+keSettings = kc.getSettings()
 
 
-# oepoll = OEPoll(ke)
-# oepoll = OEPoll(kc)
-# oepoll = OEPoll(kk)
-# oepoll = OEPoll(ki)
+oepoll = OEPoll(ke)
+oepoll = OEPoll(kc)
+oepoll = OEPoll(kk)
+oepoll = OEPoll(ki)
 oepoll = OEPoll(line)
 readOpen = codecs.open("read.json","r","utf-8")
 settingsOpen = codecs.open("temp.json","r","utf-8")
@@ -72,10 +72,10 @@ read = json.load(readOpen)
 settings = json.load(settingsOpen)
 Rfu = [line]
 lineMID = line.getProfile().mid
-# kiMID = ki.getProfile().mid
-# kkMID = kk.getProfile().mid
-# kcMID = kc.getProfile().mid
-# kcMID = ke.getProfile().mid
+kiMID = ki.getProfile().mid
+kkMID = kk.getProfile().mid
+kcMID = kc.getProfile().mid
+kcMID = ke.getProfile().mid
 # bot1 = line.getProfile().mid
 RfuBot=[lineMID]
 Family=["ufad8bc98e4811b51115039219b8f8faf",lineMID]
@@ -344,10 +344,10 @@ def sendMessageWithMention(to, lineMID):
         logError(error)
  
 def myhelp():
-    myHelp =      " 【คำสั่ง  ➾ เรียกดูคำสั่ง】"+ "  \n" + \
-                  " 【คำสั่งแปล  ➾ เรียกดูคำสั่งแปล】"+ "  \n" + \
+    myHelp =      " 【꧁❈§{MAI}+{—••[>ᴜɴʙᴀʟʟ<]••—}§❈꧂】"+ "  \n" + \
+                  " 【คำสั่ง  ➾ เรียกดูคำสั่ง】"+ "  \n" + \
                   " 【รีบูส  ➾ รูบูสระบบ】"+ "  \n" + \
-                  " 【เช็คออน์   ➾ เช็คเวลาทำงานบอท】"+ "  \n" + \
+                  " 【เช็คออน   ➾ เช็คเวลาทำงานบอท】"+ "  \n" + \
                   " 【ไลน์  ➾ เช็คข้อมูลไลน์】"+ "  \n" + \
                   " 【เช็คตั้งค่า  ➾ เช็คระบบตั้งค่า】"+ "  \n" + \
                   " 【ไอดี  ➾ ดูmid】"+ "  \n" + \
@@ -369,16 +369,16 @@ def myhelp():
                   " 【ไอดีกลุ่ม  ➾ GID กลุ่ม】"+ "  \n" + \
                   " 【รูปกลุ่ม  ➾ ดึงรูปห้อง"+ "  \n" + \
                   " 【ชื่อกลุ่ม  ➾ ดึงชื่อห้อง】"+ "  \n" + \
-                  " 【ขอลิ้งค์  ➾ เอาลิ้งค์ห้อง】"+ "  \n" + \
-                  " 【เปิดลิ้งค์  ➾ เปิดลิ้งค์ห้อง】"+ "  \n" + \
-                  " 【ปิดลิ้งค์  ➾ ปิดลิ้งค์ห้อง】"+ "  \n" + \
+                  " 【ขอลิ้ง  ➾ เอาลิ้งค์ห้อง】"+ "  \n" + \
+                  " 【เปิดลิ้ง  ➾ เปิดลิ้งค์ห้อง】"+ "  \n" + \
+                  " 【ปิดลิ้ง  ➾ ปิดลิ้งค์ห้อง】"+ "  \n" + \
                   " 【ข้อมูลกลุ่ม  ➾ เช็ครายละเอียดห้อง】"+ "  \n" + \
                   " 【สมาชิก  ➾ ชื่อสมาชิก】"+ "  \n" + \
                   " 【กลุ่ม  ➾ เช็ครายชื่อกลุ่ม】"+ "  \n" + \
                   " 【1กลุ่ม  ➾ คลิ้ก1 เช็ครายชื่อกลุ่ม】"+ "  \n" + \
                   " 【2กลุ่ม ➾ คลิ้ก2 เช็ครายชื่อกลุ่ม】"+ "  \n" + \
                   " 【3กลุ่ม  ➾ คลิ้ก3 เช็ครายชื่อกลุ่ม】"+ "  \n" + \
-                  " 【แท็ก  ➾ สั่งแท็คคนทั้งหมด】"+ "  \n" + \
+                  " 【แทค  ➾ สั่งแท็คคนทั้งหมด】"+ "  \n" + \
                   " 【เช็คอ่าน  ➾ เปิดระบบอ่าน】"+ "  \n" + \
                   " 【อ่าน  ➾ ดูรายชื่อคนอ่าน】"+ "  \n" + \
                   " 【ค้นหารูป ➾ ค้นหารูปจากgoogle】"+ "  \n" + \
@@ -389,8 +389,8 @@ def myhelp():
                   " 【รายการบล็อค  ➾ รายการกดบล็อค】"+ "  \n" + \
                   " 【รายการmid  ➾ รายการmidเพื่อนทั้งหมด】"+ "  \n" + \
                   " 【เชิญกุ  ➾ เชิญคนเขียนบอท】"+ "  \n" + \
-                  " 【ออก  ➾ สั่งตัวเองออกจากห้อง】"+ "  \n" + \
-                  " 【ออก1  ➾ สั่งคลิ้กออก】"+ "  \n" + \
+                  " 【บาย.  ➾ สั่งตัวเองออกจากห้อง】"+ "  \n" + \
+                  " 【ออก.  ➾ สั่งคลิ้กออก】"+ "  \n" + \
                   " 【ลบรัน  ➾ ลบห้องรัน】"+ "  \n" + \
                   " 【เชิญ  ➾  เชิญด้วยคท】"+ "  \n" + \
                   " 【เตะ @  ➾ ลบคน】"+ "  \n" + \
@@ -426,47 +426,47 @@ def myhelp():
                   " 【ทักออก:   ➾ ตั้งข้อความทักคนเข้า】"+ "  \n" + \
                   " 【ทักเข้า:  ➾ ตั้งข้อความทักคนออก】"+ "  \n" + \
                   " 【ตั้งแท็ก:   ➾ ตั้งข้อความทักคนแท็ก】"+ "  \n" + \
-                  " 【ลบเชิญs ➾ ลบค้างเชิญ】"+ "  \n" + \
+                  " 【ลบเชิญ ➾ ลบค้างเชิญ】"+ "  \n" + \
                   " 【เช็ค   ➾ตรวจจับคนอ่าน 】"+ "  \n" + \
                   " 【อ่าน   ➾รายชื่อคนอ่าน】"+ "  \n" + \
-                  " 【urban   ➾ขาว 】"+ "  \n" + \
+                  " 【   ➾ 】"+ "  \n" + \
                   " 【Gcancel: on  ➾ เปิดระบบยกเลิกห้อง】"+ "  \n" + \
                   " 【Gcancel: off  ➾ ปิดระบบยกเลิกห้อง】"+ "  \n" + \
                   " 【Copy @  ➾ คัดลอกคนอื่น】"+ "  \n" + \
                   " 【me  ➾ คทเรา】"+ "  \n" + \
-                  " 【ME  ➾ คทเรา】"+ "  \n" + \
+                  " 【คท  ➾ คทเรา】"+ "  \n" + \
                   " 【Me  ➾ คทเรา】"+ "  \n" + \
                   " 【zt  ➾ ดูคนไส่ล่องหน】"+ "  \n" + \
                   " 【zm  ➾ ดูคนไส่ล่องหน】"+ "  \n" + \
                   " 【zc  ➾ ดูคนไส่ล่องหน】"+ "  \n" + \
-                  " 【Allban  ➾ แบนหมด】"+ "  \n" + \
-                  " 【ban @  ➾ บชดำ】"+ "  \n" + \
-                  " 【unban @  ➾ บชขาว】"+ "  \n" + \
-                  " 【video @  ➾ ดึงรูปวิดีโอ】"+ "  \n" + \
-                  " 【mimic on  ➾ เปิดระบบพูดตาม】"+ "  \n" + \
-                  " 【mimic off  ➾ ปิดระบบพูดตาม】"+ "  \n" + \
+                  " 【แบนหมด  ➾ แบนหมด】"+ "  \n" + \
+                  " 【แบน @  ➾ บชดำ】"+ "  \n" + \
+                  " 【ขาว @  ➾ บชขาว】"+ "  \n" + \
+                  " 【ดึงรูปวีดีโอ @  ➾ ดึงรูปวิดีโอ】"+ "  \n" + \
+                  " 【พิมตาม on  ➾ เปิดระบบพูดตาม】"+ "  \n" + \
+                  " 【พิมตาม off  ➾ ปิดระบบพูดตาม】"+ "  \n" + \
                   " 【Bcvoice  +ข้อความ  ➾ ดึงmid】"+ "  \n" + \
                   " 【Cbcvoice   ➾ ส่งmp3ทุกห้อง】"+ "  \n" + \
                   " 【Dow  +ข้อความ  ➾ เปลี่ยนไอดีไลน์】"+ "  \n" + \
-                  " 【Day  ➾ เช็ควันและเดือน】"+ "  \n" + \
+                  " 【เวลา  ➾ เช็ควันและเดือน】"+ "  \n" + \
                   " 【Spam  on +เลข+ข้อความ】  ➾ "+ "  \n" + \
-                  " 【cb  ➾ ล้างบชดำ】"+ "  \n" + \
-                  " 【Sai  ➾ สั่งคลิ้กเข้า】"+ "  \n" + \
+                  " 【ล้างดำ  ➾ ล้างบชดำ】"+ "  \n" + \
+                  " 【เข้ามา.  ➾ สั่งคลิ้กเข้า】"+ "  \n" + \
                   " 【1-3 @  ➾ สั่งคลิ้กเตะ】"+ "  \n" + \
-                  " 【Cleanse  ➾ สั่งคลิ้กบิน】"+ "  \n" + \
-                  " 【protect on  ➾ เปิดป้องกัน】"+ "  \n" + \
-                  " 【protect off  ➾ ปิดป้องกัน】"+ "  \n" + \
-                  " 【cancel on  ➾ เปิดยกเลิกป้องกัน】"+ "  \n" + \
-                  " 【cancel off  ➾ ปิดยกเลิกป้องกัน】"+ "  \n" + \
-                  " 【invit on  ➾ เปิดเชิญป้องกัน】"+ "  \n" + \
-                  " 【invit off  ➾ ปิดเชิญป้องกัน】"+ "  \n" + \
-                  " 【link on  ➾ เปิดป้องกันลิ้งค์】"+ "  \n" + \
-                  " 【link off  ➾ ปิดป้องกันลิ้งค์】"+ "  \n" + \
-                  " 【guest on  ➾ เปิดป้องกันสมาชิก】"+ "  \n" + \
-                  " 【guest off  ➾ ปิดป้องกันสมาชิก】"+ "  \n" + \
-                  " 【join on  ➾ เปิดป้องกันคนเข้า】"+ "  \n" + \
-                  " 【join off  ➾ ปิดป้องกันคนเข้า】"+ "  \n" + \
-                  "⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️"
+                  " 【บิน.  ➾ สั่งคลิ้กบิน】"+ "  \n" + \
+                  " 【p on  ➾ เปิดป้องกัน】"+ "  \n" + \
+                  " 【p off  ➾ ปิดป้องกัน】"+ "  \n" + \
+                  " 【c on  ➾ เปิดยกเลิกป้องกัน】"+ "  \n" + \
+                  " 【c off  ➾ ปิดยกเลิกป้องกัน】"+ "  \n" + \
+                  " 【i on  ➾ เปิดเชิญป้องกัน】"+ "  \n" + \
+                  " 【i off  ➾ ปิดเชิญป้องกัน】"+ "  \n" + \
+                  " 【l on  ➾ เปิดป้องกันลิ้งค์】"+ "  \n" + \
+                  " 【l off  ➾ ปิดป้องกันลิ้งค์】"+ "  \n" + \
+                  " 【g on  ➾ เปิดป้องกันสมาชิก】"+ "  \n" + \
+                  " 【g off  ➾ ปิดป้องกันสมาชิก】"+ "  \n" + \
+                  " 【j on  ➾ เปิดป้องกันคนเข้า】"+ "  \n" + \
+                  " 【j off  ➾ ปิดป้องกันคนเข้า】"+ "  \n" + \
+                  "⚔️ ꧁❈§{MAI}+{—••[>ᴜɴʙᴀʟʟ<]••—}§❈꧂⚔️"
     return myHelp
 
 
@@ -693,28 +693,28 @@ def lineBot(op):
                 if text.lower() == 'คำสั่ง':
                     myHelp = myhelp()
                     line.sendMessage(to, str(myHelp))
-                elif text.lower() == 'คำสั่ง2':
+                elif text.lower() == 'คำสั่ง1':
                     helpTextToSpeech = helptexttospeech()
                     line.sendMessage(to, str(helpTextToSpeech))
-                elif text.lower() == 'คำสั่ง3':
+                elif text.lower() == 'คำสั่ง2':
                     helpLanguange = helplanguange()
                     line.sendMessage(to, str(helpLanguange))
 #==============================================================================#
                 elif text.lower() == 'Sp':
                     start = time.time()
-                    line.sendMessage(to, "   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ ")
+                    line.sendMessage(to, "   ⚔️ ꧁❈§{MAI}+{—••[>ᴜɴʙᴀʟʟ<]••—}§❈꧂ ⚔️ ")
                     elapsed_time = time.time() - start
                     line.sendMessage(to,format(str(elapsed_time)))	
                 elif text.lower() == 'sp':
                     start = time.time()
-                    line.sendMessage(to, "   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ ")
+                    line.sendMessage(to, "   ⚔️ ꧁❈§{MAI}+{—••[>ᴜɴʙᴀʟʟ<]••—}§❈꧂ ⚔️ ")
                     elapsed_time = time.time() - start
                     line.sendMessage(to,format(str(elapsed_time)))						
                 elif text.lower() == 'รีบูส':
                     line.sendMessage(to, "กรุณาล็อคอินลิ้งค์ใหม่.")
 #                    line.sendMessage(to, "Success Restarting.")
                     restartBot()
-                elif text.lower() == 'เช็คออน์':
+                elif text.lower() == 'เชคออน':
                     timeNow = time.time()
                     runtime = timeNow - botStart
                     runtime = format_timespan(runtime)
