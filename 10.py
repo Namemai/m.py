@@ -37,6 +37,30 @@ ke = LINE()
 ke.log("Auth Token : " + str(ke.authToken))
 ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
+k5 = LINE()
+k5.log("Auth Token : " + str(k5.authToken))
+k5.log("Timeline Token : " + str(k5.tl.channelAccessToken))
+
+k6 = LINE()
+k6.log("Auth Token : " + str(k6.authToken))
+k6.log("Timeline Token : " + str(k6.tl.channelAccessToken))
+
+k7 = LINE()
+k7.log("Auth Token : " + str(k7.authToken))
+k7.log("Timeline Token : " + str(k7.tl.channelAccessToken))
+
+k8 = LINE()
+k8.log("Auth Token : " + str(k8.authToken))
+k8.log("Timeline Token : " + str(k8.tl.channelAccessToken))
+
+k9 = LINE()
+k9.log("Auth Token : " + str(k9.authToken))
+k9.log("Timeline Token : " + str(k9.tl.channelAccessToken))
+
+k10 = LINE()
+k10.log("Auth Token : " + str(k10.authToken))
+k10.log("Timeline Token : " + str(k10.tl.channelAccessToken))
+
 
 print ("Login by꧁❈§{MAI}§❈꧂")
 
@@ -56,9 +80,33 @@ kcMID = kc.profile.mid
 kcProfile = kc.getProfile()
 kcSettings = kc.getSettings()
 
-keMID = kc.profile.mid
-keProfile = kc.getProfile()
-keSettings = kc.getSettings()
+keMID = ke.profile.mid
+keProfile = ke.getProfile()
+keSettings = ke.getSettings()
+
+k5MID = k5.profile.mid
+k5Profile = k5.getProfile()
+k5Settings = k5.getSettings()
+
+k6MID = k6.profile.mid
+k6Profile = k6.getProfile()
+k6Settings = k6.getSettings()
+
+k7MID = k7.profile.mid
+k7Profile = k7.getProfile()
+k7Settings = k7.getSettings()
+
+k8MID = k8.profile.mid
+k8Profile = k8.getProfile()
+k8Settings = k8.getSettings()
+
+k9MID = k9.profile.mid
+k9Profile = k9.getProfile()
+k9Settings = k9.getSettings()
+
+k10MID = k10.profile.mid
+k10Profile = k10.getProfile()
+k10Settings = k10.getSettings()
 
 
 oepoll = OEPoll(ke)
