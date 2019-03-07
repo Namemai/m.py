@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- แก้โดย.꧁❈§{MAI}+{—••[>ᴜɴʙᴀʟʟ<]••—}§❈꧂ -*-
 from linepy import *
 from akad.ttypes import *
 from multiprocessing import Pool, Process
@@ -719,7 +719,7 @@ def lineBot(op):
                     runtime = timeNow - botStart
                     runtime = format_timespan(runtime)
                     line.sendMessage(to, "เวลาการทำงานของบอท {}".format(str(runtime)))
-                elif text.lower() == 'ไลน์':
+                elif text.lower() == 'ไลน':
                     try:
                         arr = []
                         owner = "ubd78f3da598d3c32e075e062e88545ec"
@@ -728,7 +728,7 @@ def lineBot(op):
                         grouplist = line.getGroupIdsJoined()
                         contactlist = line.getAllContactIds()
                         blockedlist = line.getBlockedContactIds()
-                        ret_ = "   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ "
+                        ret_ = "   ꧁❈§{MAI}+{—••[>ᴜɴʙᴀʟʟ<]••—}§❈꧂"
                         ret_ += "\nชื่อ ไลน์คุณ ✈️ {}".format(contact.displayName)
                         ret_ += "\nรายการกลุ่ม ✈️  {}".format(str(len(grouplist)))
                         ret_ += "\nรายการเพื่อน ✈️  {}".format(str(len(contactlist)))
@@ -740,9 +740,9 @@ def lineBot(op):
                     except Exception as e:
                         line.sendMessage(msg.to, str(e))
 #==============================================================================#
-                elif text.lower() == 'เช็คตั้งค่า':
+                elif text.lower() == 'เชคค่า':
                     try:
-                        ret_ = "      ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ "
+                        ret_ = "      ꧁❈§{MAI}+{—••[>ᴜɴʙᴀʟʟ<]••—}§❈꧂ "
 
                         if settings["autoJoin"] == True: ret_ += "\nเข้าห้องออโต้ ↹ เปิด "
                         else: ret_ += "\nเข้าห้องออโต้ ↹ ปิด"
