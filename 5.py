@@ -2347,7 +2347,7 @@ def lineBot(op):
                            except:
                                line.sendMessage(msg.to,"ไม่พบ")
 
-                elif 'unban' in text.lower():
+                elif 'ub' in text.lower():
                        targets = []
                        key = eval(msg.contentMetadata["MENTION"])
                        key["MENTIONEES"] [0] ["M"]
@@ -2373,13 +2373,6 @@ def lineBot(op):
                         for mi_d in settings["blacklist"]:
                             mc += "➢ " + line.getContact(mi_d).displayName + " \n"
                         line.sendMessage(msg.to, mc + "")
-		elif msg.text in ["cb"]:
-                  if wait["selfbot"] == True:
-                    if msg._from in admin:
-                        wait["blacklist"] = {}
-                        ragets = line.getContacts(wait["blacklist"])
-                        mc = "「%i」User Blacklist" % len(ragets)
-                        line.sendMessage(msg.to,"ล้างแบนเรียบ100 " +mc)
 
                 elif msg.text.lower().startswith("urban "):
                     sep = msg.text.split(" ")
