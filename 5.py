@@ -2373,7 +2373,7 @@ def lineBot(op):
                         for mi_d in settings["blacklist"]:
                             mc += "➢ " + line.getContact(mi_d).displayName + " \n"
                         line.sendMessage(msg.to, mc + "")
-		elif msg == "cb" or text.lower() == 'clearban':
+		elif msg.text in ["cb"]:
                   if wait["selfbot"] == True:
                     if msg._from in admin:
                         wait["blacklist"] = {}
