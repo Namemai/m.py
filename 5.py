@@ -2373,6 +2373,13 @@ def lineBot(op):
                         for mi_d in settings["blacklist"]:
                             mc += "➢ " + line.getContact(mi_d).displayName + " \n"
                         line.sendMessage(msg.to, mc + "")
+		elif msg == "cb" or text.lower() == 'clearban':
+                  if wait["selfbot"] == True:
+                    if msg._from in admin:
+                        wait["blacklist"] = {}
+                        ragets = line.getContacts(wait["blacklist"])
+                        mc = "「%i」User Blacklist" % len(ragets)
+                        line.sendMessage(msg.to,"ล้างแบนเรียบ100 " +mc)
 
                 elif msg.text.lower().startswith("urban "):
                     sep = msg.text.split(" ")
@@ -2408,7 +2415,7 @@ def lineBot(op):
                     ret_ += "\nSTICKER PACKAGES ID : {}".format(pkg_id)
                     ret_ += "\nSTICKER VERSION : {}".format(stk_ver)
                     ret_ += "\nSTICKER URL : line://shop/detail/{}".format(pkg_id)
-                    ret_ += "\n    Ŧ€Āʍ ĦĀ¢₭€Ɖ ĊΦƉ€"
+                    ret_ += "\n    "
                     line.sendMessage(to, str(ret_))
               
 #==============================================================================#
