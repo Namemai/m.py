@@ -78,8 +78,8 @@ kcMID = kc.getProfile().mid
 kcMID = ke.getProfile().mid
 bot1 = line.getProfile().mid
 RfuBot=[lineMID]
-Family=["uf6dc312c5e927a81a7452eec5b26475d",lineMID]
-admin=['uf6dc312c5e927a81a7452eec5b26475d',lineMID]
+Family=["uc66e45201d1612eb4ce7b3a86bac4685",lineMID]
+admin=['uc66e45201d1612eb4ce7b3a86bac4685',lineMID]
 RfuFamily = RfuBot + Family
 
 protectname = []
@@ -451,8 +451,8 @@ def myhelp():
                   " 【Day  ➾ เช็ควันและเดือน】"+ "  \n" + \
                   " 【Spam  on +เลข+ข้อความ】  ➾ "+ "  \n" + \
                   " 【cb  ➾ ล้างบชดำ】"+ "  \n" + \
-                  " 【Sai  ➾ สั่งคลิ้กเข้า】"+ "  \n" + \
-                  " 【1-3 @  ➾ สั่งคลิ้กเตะ】"+ "  \n" + \
+                  " 【มา.  ➾ สั่งคลิ้กเข้า】"+ "  \n" + \
+                  " 【ออก. @  ➾ สั่งคลิ้กเตะ】"+ "  \n" + \
                   " 【Cleanse  ➾ สั่งคลิ้กบิน】"+ "  \n" + \
                   " 【protect on  ➾ เปิดป้องกัน】"+ "  \n" + \
                   " 【protect off  ➾ ปิดป้องกัน】"+ "  \n" + \
@@ -740,7 +740,7 @@ def lineBot(op):
                     except Exception as e:
                         line.sendMessage(msg.to, str(e))
 #==============================================================================#
-                elif text.lower() == 'เช็คตั้งค่า':
+                elif text.lower() == 'เชคค่า':
                     try:
                         ret_ = "      ꧁❈§{MAI}§❈꧂"
                         if settings["autoJoin"] == True: ret_ += "\nเข้าห้องออโต้ ↹ เปิด "
@@ -1132,7 +1132,7 @@ def lineBot(op):
 					
 #==============================================================================#
 #==============================================================================#          
-                elif text.lower() == 'แท็ก':
+                elif text.lower() == 'แทค':
                             if msg.toType == 0:
                                 sendMention(to, to, "", "")
                             elif msg.toType == 2:
@@ -2231,7 +2231,7 @@ def lineBot(op):
                                line.inviteIntoGroup(receiver,[gcmid])
                                line.sendMessage(receiver, "ผู้สร้างกลุ่มอยู่ในแล้ว")
 
-                elif msg.text in ["ออก"]:
+                elif msg.text in ["ออก."]:
                     if msg.toType == 2:
                         try:
                             ki.leaveGroup(receiver)
@@ -2241,7 +2241,7 @@ def lineBot(op):
                         except:
                             pass
 
-                elif text.lower() in ["เข้ามา"]:    
+                elif text.lower() in ["มา."]:    
                     G = line.getGroup(msg.to)
                     ginfo = line.getGroup(msg.to)
                     G.preventedJoinByTicket = False
@@ -2454,7 +2454,7 @@ def lineBot(op):
                            except:
                                line.sendMessage(msg.to,"จำกัด")                               
 
-                elif '1 ' in text.lower():
+                elif 'bb ' in text.lower():
                        targets = []
                        key = eval(msg.contentMetadata["MENTION"])
                        key["MENTIONEES"] [0] ["M"]
@@ -2467,7 +2467,7 @@ def lineBot(op):
                            except:
                                ki.sendMessage(msg.to,"จำกัด")                               
 
-                elif '2 ' in text.lower():
+                elif 'bn ' in text.lower():
                        targets = []
                        key = eval(msg.contentMetadata["MENTION"])
                        key["MENTIONEES"] [0] ["M"]
@@ -2480,7 +2480,7 @@ def lineBot(op):
                            except:
                                kk.sendMessage(msg.to,"จำกัด")                              
 
-                elif '3 ' in text.lower():
+                elif 'bm ' in text.lower():
                        targets = []
                        key = eval(msg.contentMetadata["MENTION"])
                        key["MENTIONEES"] [0] ["M"]
@@ -2854,7 +2854,7 @@ def lineBot(op):
                         else:
                             line.sendMessage(msg.to,"ปิดป้องกันคนเข้ากลุ่ม   ")
 
-                elif msg.text.lower() == 'เปิดหมด':
+                elif msg.text.lower() == 'allpro on':
                     if RfuProtect["inviteprotect"] == True:
                         if settings["lang"] == "JP":
                             line.sendMessage(msg.to,"เปิดป้องกันทั้งหมดเรียบร้อยแล้ว")
@@ -2918,7 +2918,7 @@ def lineBot(op):
                         else:
                             line.sendMessage(msg.to,"เปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
 
-                elif msg.text.lower() == 'ปิดหมด':
+                elif msg.text.lower() == 'allpro off':
                     if RfuProtect["inviteprotect"] == False:
                         if settings["lang"] == "JP":
                             line.sendMessage(msg.to,"ปิดป้องกันทั้งหมดเรียบร้อยแล้ว")
@@ -3080,7 +3080,7 @@ def lineBot(op):
                            except:
                                line.sendMessage(msg.to,"ไม่พบ")
 
-                elif msg.text in ["เช็คดำ"]:
+                elif msg.text in ["เชคดำ"]:
                   if msg._from in Family:
                     if settings["blacklist"] == {}:
                         line.sendMessage(msg.to,"ไม่พบ") 
