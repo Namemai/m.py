@@ -107,8 +107,8 @@ k6MID = k6.getProfile().mid
 k7MID = k7.getProfile().mid
 
 RfuBot=[lineMID]
-Family=["u05a8619c623960b67de73061c74e212e",lineMID]
-admin=['u05a8619c623960b67de73061c74e212e',lineMID]
+Family=["uf6dc312c5e927a81a7452eec5b26475d",lineMID]
+admin=['uf6dc312c5e927a81a7452eec5b26475d',lineMID]
 RfuFamily = RfuBot + Family
 
 protectname = []
