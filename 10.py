@@ -137,8 +137,8 @@ k9MID = k9.getProfile().mid
 k10MID = k10.getProfile().mid
 
 RfuBot=[lineMID]
-Family=["u05a8619c623960b67de73061c74e212e",lineMID]
-admin=['u05a8619c623960b67de73061c74e212e',lineMID]
+Family=["uc66e45201d1612eb4ce7b3a86bac4685",lineMID]
+admin=['uc66e45201d1612eb4ce7b3a86bac4685',lineMID]
 RfuFamily = RfuBot + Family
 
 protectname = []
@@ -578,13 +578,12 @@ def lineBot(op):
                     return
 
 #==============================================================================#
-                if text.lower() == 'คำสั่ง':
+                if text.lower() == 'h1':
                     myHelp = myhelp()
                     line.sendMessage(to, str(myHelp))
 #==============================================================================#
-                elif msg.text.lower() == 'บอท':
+                elif msg.text.lower() == 'b':
                         line.sendContact(to, lineMID)
-                        line.sendMessage(msg.to,"➲ เริ่มเช็ค by.Mai")
                         ki.sendMessage(msg.to,"➲ 1 มาครับเจ้านาย")
                         ki.sendContact(to, kiMID)
                         kk.sendMessage(msg.to,"➲ 2  มาครับเจ้านาย")
@@ -609,19 +608,17 @@ def lineBot(op):
 #==============================================================================#
                 elif text.lower() == 'Sp':
                     start = time.time()
-                    line.sendMessage(to, "   ꧁❈§{MAI}§❈꧂ ")
                     elapsed_time = time.time() - start
                     line.sendMessage(to,format(str(elapsed_time)))	
                 elif text.lower() == 'sp':
                     start = time.time()
-                    line.sendMessage(to, "   ꧁❈§{MAI}§❈꧂ ")
                     elapsed_time = time.time() - start
                     line.sendMessage(to,format(str(elapsed_time)))						
                 elif text.lower() == 'รีบูส':
                     line.sendMessage(to, "กรุณาล็อคอินลิ้งค์ใหม่.")
 #                    line.sendMessage(to, "Success Restarting.")
                     restartBot()
-                elif text.lower() == 'เชคออน':
+                elif text.lower() == 'ออน':
                     timeNow = time.time()
                     runtime = timeNow - botStart
                     runtime = format_timespan(runtime)
@@ -629,7 +626,7 @@ def lineBot(op):
                 elif text.lower() == 'ไลน':
                     try:
                         arr = []
-                        owner = "ubd78f3da598d3c32e075e062e88545ec"
+                        owner = ""
                         creator = line.getContact(owner)
                         contact = line.getContact(lineMID)
                         grouplist = line.getGroupIdsJoined()
@@ -983,7 +980,6 @@ def lineBot(op):
                     group = line.getGroup(to)
                     GS = group.creator.mid
                     line.sendContact(to, GS)
-                    line.sendMessage(to, "   ꧁❈§{MAI}§❈꧂ ")
                 elif text.lower() == 'ไอดีกลุ่ม':
                     gid = line.getGroup(to)
                     line.sendMessage(to, "→  〄 " + gid.id + " ←")
@@ -1069,7 +1065,7 @@ def lineBot(op):
 
                 elif text.lower() == '1กลุ่ม':
                         groups = ki.groups
-                        ret_ = "   ꧁❈§{MAI}+{—••[>ᴜɴʙᴀʟʟ<]••—}§❈꧂ "
+                        ret_ = "   ꧁❈{MAI}❈꧂ "
                         no = 0 + 1
                         for gid in groups:
                             group = ki.getGroup(gid)
@@ -1640,7 +1636,7 @@ def lineBot(op):
                     line.sendMessage(msg.to,"ทำการลบัญชีดำทั้งหมดเรียบร้อย")
                     print ("Clear Ban")
 
-                elif text.lower() == 'เข้ามา.':
+                elif text.lower() == 'มา.':
                     if msg.toType == 2:
                         group = line.getGroup(to)
                         group.preventedJoinByTicket = False
@@ -1667,9 +1663,7 @@ def lineBot(op):
                         time.sleep(0.01)
                         k10.acceptGroupInvitationByTicket(to,format(str(ticket)))
                         time.sleep(0.01)
-                        group.preventedJoinByTicket = True
-                        line.updateGroup(group)
-                        print ("꧁❈§{MAI}+{—••[>ᴜɴʙᴀʟʟ<]••—}§❈꧂ ")
+                        print ("꧁❈§{MAI}§❈꧂ ")
 
                 elif 'เตะ' in text.lower():
                        targets = []
@@ -2199,7 +2193,7 @@ def lineBot(op):
                         else:
                             line.sendMessage(msg.to,"ปิดป้องกันคนเข้ากลุ่ม   ")
 
-                elif msg.text.lower() == 'เปิดหมด':
+                elif msg.text.lower() == 'allpro on':
                     if RfuProtect["inviteprotect"] == True:
                         if settings["lang"] == "JP":
                             line.sendMessage(msg.to,"꧁❈§{MAI}§❈꧂")
@@ -2263,7 +2257,7 @@ def lineBot(op):
                         else:
                             line.sendMessage(msg.to,"เปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
 
-                elif msg.text.lower() == 'ปิดหมด':
+                elif msg.text.lower() == 'allpro off':
                     if RfuProtect["inviteprotect"] == False:
                         if settings["lang"] == "JP":
                             line.sendMessage(msg.to,"꧁❈§{MAI}§❈꧂")
@@ -2465,7 +2459,7 @@ def lineBot(op):
                     stk_id = msg.contentMetadata['STKID']
                     stk_ver = msg.contentMetadata['STKVER']
                     pkg_id = msg.contentMetadata['STKPKGID']
-                    ret_ = "    ꧁❈§{MAI}+{—••[>ᴜɴʙᴀʟʟ<]••—}§❈꧂"
+                    ret_ = "    ꧁❈§{MAI}§❈꧂"
                     ret_ += "\nSTICKER ID : {}".format(stk_id)
                     ret_ += "\nSTICKER PACKAGES ID : {}".format(pkg_id)
                     ret_ += "\nSTICKER VERSION : {}".format(stk_ver)
@@ -2600,6 +2594,8 @@ def lineBot(op):
                   time.sleep(0.01)
                   kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
                   k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
@@ -2629,6 +2625,12 @@ def lineBot(op):
                   ticket = ki.reissueGroupTicket(op.param1)
                   kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
                   k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
@@ -2653,6 +2655,14 @@ def lineBot(op):
                   random.choice(Rfu).updateGroup(G)
                   ticket = random.choice(Rfu).reissueGroupTicket(op.param1)
                   kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
@@ -2683,6 +2693,14 @@ def lineBot(op):
                   ticket = ki.reissueGroupTicket(op.param1)
                   kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
                   k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
@@ -2707,6 +2725,14 @@ def lineBot(op):
                   random.choice(Rfu).updateGroup(G)
                   ticket = random.choice(Rfu).reissueGroupTicket(op.param1)
                   kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
@@ -2737,6 +2763,14 @@ def lineBot(op):
                   ticket = ki.reissueGroupTicket(op.param1)
                   ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
                   k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
@@ -2762,6 +2796,14 @@ def lineBot(op):
                   ticket = random.choice(Rfu).reissueGroupTicket(op.param1)
                   ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
                   k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
@@ -2778,7 +2820,426 @@ def lineBot(op):
                   random.choice(Rfu).updateGroup(G)
                   settings["blacklist"][op.param2] = True
                   f=codecs.open('st2__b.json','w','utf-8')
-                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)                  
+                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+
+            if op.param3 in K5MID:
+              if op.param2 not in Family:
+                try:
+                  G = ke.getGroup(op.param1)
+                  G = k5.getGroup(op.param1)
+                  ke.kickoutFromGroup(op.param1,[op.param2])
+                  G.preventedJoinByTicket = False
+                  k5.updateGroup(G)
+                  ticket = k5.reissueGroupTicket(op.param1)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01) 
+                  G.preventedJoinByTicket = True
+                  line.updateGroup(G)
+                  settings["blacklist"][op.param2] = True
+                  f=codecs.open('st2__b.json','w','utf-8')
+                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                except:
+                  G = random.choice(Rfu).getGroup(op.param1)
+                  random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                  G.preventedJoinByTicket = False
+                  random.choice(Rfu).updateGroup(G)
+                  ticket = random.choice(Rfu).reissueGroupTicket(op.param1)
+                  k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  G.preventedJoinByTicket = True
+                  random.choice(Rfu).updateGroup(G)
+                  settings["blacklist"][op.param2] = True
+                  f=codecs.open('st2__b.json','w','utf-8')
+                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+
+            if op.param3 in k6MID:
+              if op.param2 not in Family:
+                try:
+                  G = kk.getGroup(op.param1)
+                  G = k6.getGroup(op.param1)
+                  kk.kickoutFromGroup(op.param1,[op.param2])
+                  G.preventedJoinByTicket = False
+                  k6.updateGroup(G)
+                  ticket = k6.reissueGroupTicket(op.param1)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  G.preventedJoinByTicket = True
+                  kk.updateGroup(G)
+                  settings["blacklist"][op.param2] = True
+                  f=codecs.open('st2__b.json','w','utf-8')
+                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                except:
+                  G = random.choice(Rfu).getGroup(op.param1) 
+                  random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                  G.preventedJoinByTicket = False
+                  k6.updateGroup(G)
+                  ticket = random.choice(Rfu).reissueGroupTicket(op.param1)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  G.preventedJoinByTicket = True
+                  ki.updateGroup(G)
+                  settings["blacklist"][op.param2] = True
+                  f=codecs.open('st2__b.json','w','utf-8')
+                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                  
+            if op.param3 in k7MID:
+              if op.param2 not in Family:
+                try:
+                  G = kc.getGroup(op.param1)
+                  G = k7.getGroup(op.param1)
+                  kc.kickoutFromGroup(op.param1,[op.param2])
+                  G.preventedJoinByTicket = False
+                  kc.updateGroup(G)
+                  ticket = k7.reissueGroupTicket(op.param1)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  G.preventedJoinByTicket = True
+                  kk.updateGroup(G)
+                  settings["blacklist"][op.param2] = True
+                  f=codecs.open('st2__b.json','w','utf-8')
+                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                except:
+                  G = random.choice(Rfu).getGroup(op.param1)
+                  random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                  G.preventedJoinByTicket = False
+                  random.choice(Rfu).updateGroup(G)
+                  ticket = random.choice(Rfu).reissueGroupTicket(op.param1)
+                  k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  G.preventedJoinByTicket = True
+                  random.choice(Rfu).updateGroup(G)
+                  settings["blacklist"][op.param2] = True
+                  f=codecs.open('st2__b.json','w','utf-8')
+                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                  
+            if op.param3 in k8MID:
+              if op.param2 not in Family:
+                try:
+                  G = kk.getGroup(op.param1)
+                  G = k8.getGroup(op.param1)
+                  ki.kickoutFromGroup(op.param1,[op.param2])
+                  G.preventedJoinByTicket = False
+                  ki.updateGroup(G)
+                  ticket = ki.reissueGroupTicket(op.param1)
+                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  G.preventedJoinByTicket = True
+                  kc.updateGroup(G)
+                  settings["blacklist"][op.param2] = True
+                  f=codecs.open('st2__b.json','w','utf-8')
+                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                except:
+                  G = random.choice(Rfu).getGroup(op.param1) 
+                  random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                  G.preventedJoinByTicket = False
+                  random.choice(Rfu).updateGroup(G)
+                  ticket = random.choice(Rfu).reissueGroupTicket(op.param1)
+                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  G.ventedJoinByTicket = True
+                  random.choice(Rfu).updateGroup(G)
+                  settings["blacklist"][op.param2] = True
+                  f=codecs.open('st2__b.json','w','utf-8')
+                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+
+            if op.param3 in k9MID:
+              if op.param2 not in Family:
+                try:
+                  G = k9.getGroup(op.param1)
+                  G = kc.getGroup(op.param1)
+                  k9.kickoutFromGroup(op.param1,[op.param2])
+                  G.preventedJoinByTicket = False
+                  ki.updateGroup(G)
+                  ticket = k9.reissueGroupTicket(op.param1)
+                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  G.preventedJoinByTicket = True
+                  ke.updateGroup(G)
+                  settings["blacklist"][op.param2] = True
+                  f=codecs.open('st2__b.json','w','utf-8')
+                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                except:
+                  G = random.choice(Rfu).getGroup(op.param1) 
+                  random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                  G.preventedJoinByTicket = False
+                  random.choice(Rfu).updateGroup(G)
+                  ticket = random.choice(Rfu).reissueGroupTicket(op.param1)
+                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  G.preventedJoinByTicket = True
+                  random.choice(Rfu).updateGroup(G)
+                  settings["blacklist"][op.param2] = True
+                  f=codecs.open('st2__b.json','w','utf-8')
+                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+
+            if op.param3 in k10MID:
+              if op.param2 not in Family:
+                try:
+                  G = k10.getGroup(op.param1)
+                  G = kc.getGroup(op.param1)
+                  k10.kickoutFromGroup(op.param1,[op.param2])
+                  G.preventedJoinByTicket = False
+                  k10.updateGroup(G)
+                  ticket = k10.reissueGroupTicket(op.param1)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  G.preventedJoinByTicket = True
+                  ke.updateGroup(G)
+                  settings["blacklist"][op.param2] = True
+                  f=codecs.open('st2__b.json','w','utf-8')
+                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                except:
+                  G = random.choice(Rfu).getGroup(op.param1) 
+                  random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                  G.preventedJoinByTicket = False
+                  random.choice(Rfu).updateGroup(G)
+                  ticket = random.choice(Rfu).reissueGroupTicket(op.param1)
+                  k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  time.sleep(0.01)
+                  G.preventedJoinByTicket = True
+                  random.choice(Rfu).updateGroup(G)
+                  settings["blacklist"][op.param2] = True
+                  f=codecs.open('st2__b.json','w','utf-8')
+                  json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+
 
         if op.type == 19:
             if lineMID in op.param3:
@@ -3120,6 +3581,378 @@ def lineBot(op):
                         settings["blacklist"][op.param2] = True
             except:
                 pass
+
+        if op.type == 19:
+            try:
+                if op.param3 in k5MID:
+                    if op.param2 in kiMID:
+                        G = ke.getGroup(op.param1)
+                        G.preventedJoinByTicket = False
+                        ke.updateGroup(G)
+                        ticket = ke.reissueGroupTicket(op.param1)
+                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        G.preventedJoinByTicket = True
+                        line.updateGroup(G)
+                    else:
+                        G = ke.getGroup(op.param1)                                                
+                        random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                        G.preventedJoinByTicket = False
+                        ke.updateGroup(G)
+                        ticket = ke.reissueGroupTicket(op.param1)
+                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        G.preventedJoinByTicket = True
+                        ki.updateGroup(G)
+                        settings["blacklist"][op.param2] = True                       
+
+                elif op.param3 in k6MID:
+                    if op.param2 in lineMID:
+                        G = k5.getGroup(op.param1)
+                        G.preventedJoinByTicket = False
+                        k5.updateGroup(G)
+                        ticket = k5.reissueGroupTicket(op.param1)
+                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        G.preventedJoinByTicket = True
+                        kk.updateGroup(G)
+                    else:
+                        G = k5.getGroup(op.param1)
+                        random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                        G.preventedJoinByTicket = False
+                        k5.updateGroup(G)
+                        ticket = k5.reissueGroupTicket(op.param1)
+                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        G.preventedJoinByTicket = True
+                        ki.updateGroup(G)
+                        settings["blacklist"][op.param2] = True
+
+                elif op.param3 in k7MID:
+                    if op.param2 in kiMID:
+                        G = k6.getGroup(op.param1)
+                        G.preventedJoinByTicket = False
+                        k6.updateGroup(G)
+                        ticket = k6.reissueGroupTicket(op.param1)
+                        kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        G.preventedJoinByTicket = True
+                        ki.updateGroup(G)
+                    else:
+                        G = k6.getGroup(op.param1)
+                        random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                        G.preventedJoinByTicket = False
+                        k6.updateGroup(G)
+                        ticket = k6.reissueGroupTicket(op.param1)
+                        kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        G.preventedJoinByTicket = True
+                        ki.updateGroup(G)
+                        settings["blacklist"][op.param2] = True
+
+                elif op.param3 in k8MID:
+                    if op.param2 in kkMID:
+                        G = k7.getGroup(op.param1)
+                        G.preventedJoinByTicket = False
+                        k7.updateGroup(G)
+                        ticket = k7.reissueGroupTicket(op.param1)
+                        kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        G.preventedJoinByTicket = True
+                        kk.updateGroup(G)
+                    else:
+                        G = k8.getGroup(op.param1)
+                        random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                        G.preventedJoinByTicket = False
+                        k8.updateGroup(G)
+                        ticket = k8.reissueGroupTicket(op.param1)
+                        k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        G.preventedJoinByTicket = True
+                        kc.updateGroup(G)
+                        settings["blacklist"][op.param2] = True
+                elif op.param3 in k9MID:
+                    if op.param2 in kcMID:
+                        G = k8.getGroup(op.param1)
+                        G.preventedJoinByTicket = False
+                        k8.updateGroup(G)
+                        ticket = k8.reissueGroupTicket(op.param1)
+                        kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        G.preventedJoinByTicket = True
+                        kc.updateGroup(G)
+                    else:
+                        G = k9.getGroup(op.param1)
+                        random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                        G.preventedJoinByTicket = False
+                        k9.updateGroup(G)
+                        ticket = k9.reissueGroupTicket(op.param1)
+                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        G.preventedJoinByTicket = True
+                        ke.updateGroup(G)
+                        settings["blacklist"][op.param2] = True
+                elif op.param3 in k10MID:
+                    if op.param2 in kcMID:
+                        G = k9.getGroup(op.param1)
+                        G.preventedJoinByTicket = False
+                        k9.updateGroup(G)
+                        ticket = k8.reissueGroupTicket(op.param1)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        G.preventedJoinByTicket = True
+                        kc.updateGroup(G)
+                    else:
+                        G = k10.getGroup(op.param1)
+                        random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
+                        G.preventedJoinByTicket = False
+                        k10.updateGroup(G)
+                        ticket = k10.reissueGroupTicket(op.param1)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        ke.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k5.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k6.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k7.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k8.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k9.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        k10.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        time.sleep(0.0001)
+                        G.preventedJoinByTicket = True
+                        ke.updateGroup(G)
+                        settings["blacklist"][op.param2] = True
+            except:
+                pass
 #==============================================================================#
         if op.type == 17:
             if op.param2 not in Family:
@@ -3329,7 +4162,7 @@ def lineBot(op):
             except:
                 pass
         if op.type == 55:
-            print ("[ 55 ] ")
+            print ("[ by,mai ]บอททำงานปกติคัฟ ")
             try:
                 if op.param1 in read['readPoint']:
                     if op.param2 in read['readMember'][op.param1]:
