@@ -1480,9 +1480,6 @@ def lineBot(op):
                     if msg.to in RfuCctv['point']:
                         RfuCctv['cyduk'][msg.to]=False
                         line.sendText(msg.to, RfuCctv['sidermem'][msg.to])
-                    else:
-
-
 
                 elif text.lower() == 'รายการเพื่อน':
                     contactlist = line.getAllContactIds()
