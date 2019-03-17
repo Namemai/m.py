@@ -114,8 +114,8 @@ settings = {
     "clock": False,
     "cName":"",
     "cNames":"",
-    "welcome":"ตั้งข้อความคนเข้าด้วยนะครับ",
-    "bye":"ตั้งข้อความคนออกด้วยนะครับ",
+    "welcome": False,
+    "bye": False,
     "invite": {},
     "winvite": False,
     "pnharfbot": {},
@@ -344,7 +344,7 @@ def sendMessageWithMention(to, lineMID):
         logError(error)
  
 def myhelp():
-    myHelp =      " 【คำสั่ง  ➾ เรียกดูคำสั่ง】"+ "  \n" + \
+    myHelp =      " 【h1  ➾ เรียกดูคำสั่ง】"+ "  \n" + \
                   " 【คำสั่งแปล  ➾ เรียกดูคำสั่งแปล】"+ "  \n" + \
                   " 【รีบูส  ➾ รูบูสระบบ】"+ "  \n" + \
                   " 【เช็คออน์   ➾ เช็คเวลาทำงานบอท】"+ "  \n" + \
@@ -693,21 +693,13 @@ def lineBot(op):
                 if text.lower() == 'h1':
                     myHelp = myhelp()
                     line.sendMessage(to, str(myHelp))
-                elif text.lower() == 'h2':
-                    helpTextToSpeech = helptexttospeech()
-                    line.sendMessage(to, str(helpTextToSpeech))
-                elif text.lower() == 'h3':
-                    helpLanguange = helplanguange()
-                    line.sendMessage(to, str(helpLanguange))
 #==============================================================================#
                 elif text.lower() == 'Sp':
                     start = time.time()
-                    line.sendMessage(to, "   ꧁❈§{MAI}§❈꧂ ")
                     elapsed_time = time.time() - start
                     line.sendMessage(to,format(str(elapsed_time)))	
                 elif text.lower() == 'sp':
                     start = time.time()
-                    line.sendMessage(to, "   ꧁❈§{MAI}§❈꧂ ")
                     elapsed_time = time.time() - start
                     line.sendMessage(to,format(str(elapsed_time)))						
                 elif text.lower() == 'รีบูส':
@@ -722,7 +714,7 @@ def lineBot(op):
                 elif text.lower() == 'ไลน์':
                     try:
                         arr = []
-                        owner = "ubd78f3da598d3c32e075e062e88545ec"
+                        owner = "uc66e45201d1612eb4ce7b3a86bac4685"
                         creator = line.getContact(owner)
                         contact = line.getContact(lineMID)
                         grouplist = line.getGroupIdsJoined()
@@ -912,7 +904,7 @@ def lineBot(op):
                             for ls in lists:
                                 path = line.getProfileCoverURL(ls)
                                 line.sendImageWithURL(msg.to, str(path))
-                elif msg.text.lower().startswith("copy "):
+                elif msg.text.lower().startswith("ก็อป "):
                     if 'MENTION' in list(msg.contentMetadata.keys())!= None:
                         names = re.findall(r'@(\w+)', text)
                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -991,7 +983,7 @@ def lineBot(op):
                     if settings["mimic"]["target"] == {}:
                         line.sendMessage(msg.to,"Tidak Ada Target")
                     else:
-                        mc = "   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ "
+                        mc = " "
                         for mi_d in settings["mimic"]["target"]:
                             mc += "\n "+line.getContact(mi_d).displayName
                         line.sendMessage(msg.to,mc + "\n    Ŧ€Āʍ ĦĀ¢₭€Ɖ ĊΦƉ€")
@@ -1012,7 +1004,6 @@ def lineBot(op):
                     group = line.getGroup(to)
                     GS = group.creator.mid
                     line.sendContact(to, GS)
-                    line.sendMessage(to, "   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ ")
                 elif text.lower() == 'ไอดีกลุ่ม':
                     gid = line.getGroup(to)
                     line.sendMessage(to, "→  〄 " + gid.id + " ←")
@@ -1023,13 +1014,13 @@ def lineBot(op):
                 elif text.lower() == 'ชื่อกลุ่ม':
                     gid = line.getGroup(to)
                     line.sendMessage(to, "→ " + gid.name + " ←")
-                elif text.lower() == 'ขอลิ้งค์':
+                elif text.lower() == 'ขอลิ้ง':
                     if msg.toType == 2:
                         group = line.getGroup(to)
                         if group.preventedJoinByTicket == False:
                             ticket = line.reissueGroupTicket(to)
                             line.sendMessage(to, "นี้คือ QR ของกลุ่มนี้ สามารถนำปใช้ได้เลย \nhttps://line.me/R/ti/g/{}".format(str(ticket)))
-                elif text.lower() == 'เปิดลิ้งค์':
+                elif text.lower() == 'เปิดลิ้ง':
                     if msg.toType == 2:
                         group = line.getGroup(to)
                         if group.preventedJoinByTicket == False:
@@ -1038,7 +1029,7 @@ def lineBot(op):
                             group.preventedJoinByTicket = False
                             line.updateGroup(group)
                             line.sendMessage(to, "เปิดQRกลุ่มเป็นอันที่เรียบร้อย")
-                elif text.lower() == 'ปิดลิ้งค์':
+                elif text.lower() == 'ปิดลิ้ง':
                     if msg.toType == 2:
                         group = line.getGroup(to)
                         if group.preventedJoinByTicket == True:
@@ -1071,14 +1062,14 @@ def lineBot(op):
                     ret_ += "\nจำนวนสมาชิก ⋙ {}".format(str(len(group.members)))
                     ret_ += "\nสมาชิกค้างเชิญ ⋙ {}".format(gPending)
                     ret_ += "\nQR ของกลุ่ม ⋙ ".format(gQr)
-                    ret_ += "\n   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ "
+                    ret_ += "\n "
                     line.sendMessage(to, str(ret_))
                     line.sendImageWithURL(to, path)
 
                 elif text.lower() == 'สมาชิก':
                     if msg.toType == 2:
                         group = line.getGroup(to)
-                        ret_ = "   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ "
+                        ret_ = " "
                         no = 0 + 1
                         for mem in group.members:
                             ret_ += "\n↜ ↝ {}. {}".format(str(no), str(mem.displayName))
@@ -1087,7 +1078,7 @@ def lineBot(op):
                         line.sendMessage(to, str(ret_))
                 elif text.lower() == 'กลุ่ม':
                         groups = line.groups
-                        ret_ = "   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ "
+                        ret_ = " "
                         no = 0 + 1
                         for gid in groups:
                             group = line.getGroup(gid)
@@ -1098,7 +1089,7 @@ def lineBot(op):
 
                 elif text.lower() == '1กลุ่ม':
                         groups = ki.groups
-                        ret_ = "   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ "
+                        ret_ = " "
                         no = 0 + 1
                         for gid in groups:
                             group = ki.getGroup(gid)
@@ -1109,7 +1100,7 @@ def lineBot(op):
 
                 elif text.lower() == '2กลุ่ม':
                         groups = kk.groups
-                        ret_ = "   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ "
+                        ret_ = " "
                         no = 0 + 1
                         for gid in groups:
                             group = kk.getGroup(gid)
@@ -1273,743 +1264,13 @@ def lineBot(op):
                             print (error)
                         pass
                     else:
-                        line.sendMessage(receiver,"สั่งเช็คใหม่แล้วสั่งอ่านใหม่อีกรอบ \n   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ ")
-
-                elif msg.text.lower().startswith("tr-af "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='af')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-sq "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='sq')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-am "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='am')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ar "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ar')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-hy "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='hy')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-az "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='az')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-eu "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='eu')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-be "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='be')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-bn "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='bn')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-bs "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='bs')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-bg "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='bg')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ca "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ca')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ceb "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ceb')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ny "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ny')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-zh-cn "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='zh-cn')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-zh-tw "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='zh-tw')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-co "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='co')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-hr "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='hr')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-cs "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='cs')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-da "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='da')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-nl "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='nl')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-en "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='en')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-et "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='et')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-fi "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='fi')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-fr "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='fr')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-fy "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='fy')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-gl "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='gl')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ka "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ka')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-de "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='de')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-el "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='el')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-gu "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='gu')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ht "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ht')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ha "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ha')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-haw "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='haw')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-iw "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='iw')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-hi "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='hi')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-hmn "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='hmn')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-hu "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='hu')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-is "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='is')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ig "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ig')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-id "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='id')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ga "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ga')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-it "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='it')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ja "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ja')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-jw "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='jw')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-kn "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='kn')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-kk "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='kk')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-km "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='km')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ko "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ko')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ku "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ku')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ky "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ky')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-lo "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='lo')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-la "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='la')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-lv "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='lv')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-lt "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='lt')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-lb "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='lb')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-mk "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='mk')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-mg "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='mg')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ms "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ms')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ml "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ml')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-mt "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='mt')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-mi "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='mi')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-mr "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='mr')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-mn "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='mn')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-my "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='my')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ne "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ne')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-no "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='no')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ps "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ps')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-fa "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='fa')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-pl "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='pl')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-pt "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='pt')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-pa "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='pa')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ro "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ro')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ru "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ru')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-sm "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='sm')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-gd "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='gd')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-sr "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='sr')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-st "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='st')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-sn "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='sn')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-sd "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='sd')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-si "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='si')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-sk "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='sk')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-sl "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='sl')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-so "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='so')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-es "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='es')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-su "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='su')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-sw "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='sw')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-sv "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='sv')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-tg "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='tg')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ta "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ta')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-te "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='te')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-th "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='th')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-tr "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='tr')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-uk "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='uk')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-ur "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='ur')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-uz "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='uz')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-vi "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='vi')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-cy "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='cy')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-xh "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='xh')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-yi "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='yi')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-yo "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='yo')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-zu "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='zu')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-fil "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='fil')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-                elif msg.text.lower().startswith("tr-he "):
-                    sep = text.split(" ")
-                    isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='he')
-                    A = hasil.text
-                    line.sendMessage(msg.to, A)
-
+                        line.sendMessage(receiver,"สั่งเช็คใหม่แล้วสั่งอ่านใหม่อีกรอบ \n  ")
 
 
 
                 elif "Bcvoice " in msg.text:
                     bctxt = msg.text.replace("Bcvoice ", "")
-                    bc = ("⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ \nŦ€Āʍ ĦĀ¢₭€Ɖ ĊΦƉ€")
+                    bc = ("")
                     cb = (bctxt + bc)
                     tts = gTTS(cb, lang='id', slow=False)
                     tts.save('tts.mp3')
@@ -2019,7 +1280,7 @@ def lineBot(op):
 
                 elif "Cbcvoice " in msg.text:
                     bctxt = msg.text.replace("Cbcvoice ", "")
-                    bc = ("⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️ \nŦ€Āʍ ĦĀ¢₭€Ɖ ĊΦƉ€")
+                    bc = ("")
                     cb = (bctxt + bc)
                     tts = gTTS(cb, lang='id', slow=False)
                     tts.save('tts.mp3')
@@ -2172,13 +1433,11 @@ def lineBot(op):
                     RfuCctv['point'][msg.to] = msg.id
                     RfuCctv['sidermem'][msg.to] = ""
                     RfuCctv['cyduk'][msg.to]=True
-                    line.sendMessage(msg.to,"   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️")
                 elif msg.text in ["อ่านออโต้ปิด"]:
                     if msg.to in RfuCctv['point']:
                         RfuCctv['cyduk'][msg.to]=False
                         line.sendText(msg.to, RfuCctv['sidermem'][msg.to])
                     else:
-                        line.sendMessage(msg.to, "   ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️")
 
 
 
@@ -2186,7 +1445,7 @@ def lineBot(op):
                     contactlist = line.getAllContactIds()
                     kontak = line.getContacts(contactlist)
                     num=1
-                    msgs="⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️"
+                    msgs=""
                     for ids in kontak:
                         msgs+="\n[%i] %s" % (num, ids.displayName)
                         num=(num+1)
@@ -2197,7 +1456,7 @@ def lineBot(op):
                     blockedlist = line.getBlockedContactIds()
                     kontak = line.getContacts(blockedlist)
                     num=1
-                    msgs="⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️"
+                    msgs=""
                     for ids in kontak:
                         msgs+="\n[%i] %s" % (num, ids.displayName)
                         num=(num+1)
@@ -2208,7 +1467,7 @@ def lineBot(op):
                     gruplist = line.getAllContactIds()
                     kontak = line.getContacts(gruplist)
                     num=1
-                    msgs="⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️"
+                    msgs=""
                     for ids in kontak:
                         msgs+="\n[%i] %s" % (num, ids.mid)
                         num=(num+1)
@@ -2231,7 +1490,7 @@ def lineBot(op):
                                line.inviteIntoGroup(receiver,[gcmid])
                                line.sendMessage(receiver, "ผู้สร้างกลุ่มอยู่ในแล้ว")
 
-                elif msg.text in ["ออก."]:
+                elif msg.text in ["ออก"]:
                     if msg.toType == 2:
                         try:
                             ki.leaveGroup(receiver)
@@ -2241,7 +1500,7 @@ def lineBot(op):
                         except:
                             pass
 
-                elif text.lower() in ["มา."]:    
+                elif text.lower() in ["มา"]:    
                     G = line.getGroup(msg.to)
                     ginfo = line.getGroup(msg.to)
                     G.preventedJoinByTicket = False
@@ -2252,11 +1511,6 @@ def lineBot(op):
                     kk.acceptGroupInvitationByTicket(msg.to,Ticket)
                     kc.acceptGroupInvitationByTicket(msg.to,Ticket)
                     ke.acceptGroupInvitationByTicket(msg.to,Ticket)
-                    G = line.getGroup(msg.to)
-                    G.preventedJoinByTicket = True
-                    line.updateGroup(G)
-                    G.preventedJoinByTicket(G)
-                    line.updateGroup(G)
 
                 elif msg.text in ["แท็กเปิด"]:
                     settings["detectMention"] = True
@@ -2273,7 +1527,7 @@ def lineBot(op):
                          line.sendMessage(msg.to, "ตั้งข้อความเรืยบร้อย")
                      else:
                          settings["Respontag"] = spl
-                         line.sendMessage(msg.to, "⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️\n\n{}".format(str(spl)))
+                         line.sendMessage(msg.to, "\n\n{}".format(str(spl)))
 
 
                 elif 'ทักออก: ' in msg.text:
@@ -2283,7 +1537,7 @@ def lineBot(op):
                          line.sendMessage(msg.to, "ตั้งข้อความคนออกเรียบร้อย")
                      else:
                           settings["bye"] = spl
-                          line.sendMessage(msg.to, "⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️\n\n\n{}".format(str(spl)))
+                          line.sendMessage(msg.to, "\n\n\n{}".format(str(spl)))
 
                 elif 'ทักเข้า: ' in msg.text:
                   if msg._from in admin:
@@ -2292,7 +1546,7 @@ def lineBot(op):
                          line.sendMessage(msg.to, "ตั้งข้อความคนเข้าเรียบร้อยแล้ว")
                      else:
                           settings["welcome"] = spl
-                          line.sendMessage(msg.to, "⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️\n\n\n{}".format(str(spl)))
+                          line.sendMessage(msg.to, "\n\n\n{}".format(str(spl)))
 
                 elif msg.text.lower().startswith("ภาพ "):
                     sep = msg.text.split(" ")
@@ -2365,7 +1619,7 @@ def lineBot(op):
                         else:
                             line.sendMessage(msg.to, "Out Of Range!")
                             
-                elif 'ลบเชิญS' in msg.text.lower():
+                elif 'ลบเชิญ' in msg.text.lower():
                    if msg.toType == 2:
                        X = line.getGroup(msg.to)
                        if X.invitee is not None:
@@ -2679,21 +1933,6 @@ def lineBot(op):
                         line.sendMessage(msg.to,"Update Bio All Kicker to : " + string)
                         print ("Update Bio All Kicker")
 
-                elif text.lower() == "sai":
-                    if msg._from in Family:
-                        profile = ki.getProfile()
-                        text = profile.displayName + ""
-                        ki.sendMessage(to, text)                                
-                        profile = kk.getProfile()
-                        text = profile.displayName + ""
-                        kk.sendMessage(to, text)                                
-                        profile = kc.getProfile()
-                        text = profile.displayName + ""
-                        kc.sendMessage(to, text)
-                        profile = ke.getProfile()                        
-                        text = profile.displayName + ""
-                        ke.sendMessage(to, text)                        
-                        print ("สั่งคลิ้กเข้า")
 
   
 
@@ -3120,7 +2359,7 @@ def lineBot(op):
                     stk_id = msg.contentMetadata['STKID']
                     stk_ver = msg.contentMetadata['STKVER']
                     pkg_id = msg.contentMetadata['STKPKGID']
-                    ret_ = "    ⚔️ Š€£Բ ฿✪Ŧ β¥.Šαї ⚔️"
+                    ret_ = " "
                     ret_ += "\nSTICKER ID : {}".format(stk_id)
                     ret_ += "\nSTICKER PACKAGES ID : {}".format(pkg_id)
                     ret_ += "\nSTICKER VERSION : {}".format(stk_ver)
@@ -3725,7 +2964,7 @@ def lineBot(op):
             except:
                 pass
         if op.type == 55:
-            print ("[ 55 ] ")
+            print ("[ by,mai ] บอททำงานคับ ")
             try:
                 if op.param1 in read['readPoint']:
                     if op.param2 in read['readMember'][op.param1]:
