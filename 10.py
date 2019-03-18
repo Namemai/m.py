@@ -582,7 +582,7 @@ def lineBot(op):
                     myHelp = myhelp()
                     line.sendMessage(to, str(myHelp))
 #==============================================================================#
-                elif msg.text.lower() == 'b':
+                elif msg.text.lower() == 'ผี':
                         line.sendContact(to, lineMID)
                         ki.sendMessage(msg.to,"➲ 1 มาครับเจ้านาย")
                         ki.sendContact(to, kiMID)
@@ -609,7 +609,7 @@ def lineBot(op):
                 elif text.lower() == 'Sp':
                     start = time.time()
                     elapsed_time = time.time() - start
-                    line.sendMessage(to,format(str(elapsed_time)))	
+	            line.sendMessage(msg.to, "{}ความเร็วผี".format(str(elapsed_time)))
                 elif text.lower() == 'sp':
                     start = time.time()
                     elapsed_time = time.time() - start
@@ -1636,7 +1636,7 @@ def lineBot(op):
                     line.sendMessage(msg.to,"ทำการลบัญชีดำทั้งหมดเรียบร้อย")
                     print ("Clear Ban")
 
-                elif text.lower() == 'มา.':
+                elif text.lower() == 'ผีมา':
                     if msg.toType == 2:
                         group = line.getGroup(to)
                         group.preventedJoinByTicket = False
@@ -1936,7 +1936,7 @@ def lineBot(op):
                                 pass
                                 print ("ลบแชท")
 
-                elif text.lower() == "ออก.":
+                elif text.lower() == "ผีออก":
                     if msg._from in Family:
                         ki.leaveGroup(msg.to)
                         kk.leaveGroup(msg.to)
@@ -2403,7 +2403,7 @@ def lineBot(op):
                            except:
                                line.sendMessage(msg.to,"ไม่พบ")
 
-                elif 'ขาว' in text.lower():
+                elif 'cb' in text.lower():
                        targets = []
                        key = eval(msg.contentMetadata["MENTION"])
                        key["MENTIONEES"] [0] ["M"]
