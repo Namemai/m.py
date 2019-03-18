@@ -609,11 +609,11 @@ def lineBot(op):
                 elif text.lower() == 'Sp':
                     start = time.time()
                     elapsed_time = time.time() - start
-	            line.sendMessage(msg.to, "{}ความเร็วผี".format(str(elapsed_time)))
+                    line.sendMessage(msg.to, "{}ความเร็วผี".format(str(elapsed_time)))
                 elif text.lower() == 'sp':
                     start = time.time()
                     elapsed_time = time.time() - start
-                    line.sendMessage(to,format(str(elapsed_time)))						
+                    line.sendMessage(msg.to, "{}ความเร็วผี".format(str(elapsed_time)))						
                 elif text.lower() == 'รีบูส':
                     line.sendMessage(to, "กรุณาล็อคอินลิ้งค์ใหม่.")
 #                    line.sendMessage(to, "Success Restarting.")
