@@ -107,8 +107,8 @@ k6MID = k6.getProfile().mid
 k7MID = k7.getProfile().mid
 
 RfuBot=[lineMID]
-Family=["uf6dc312c5e927a81a7452eec5b26475d",lineMID]
-admin=['uf6dc312c5e927a81a7452eec5b26475d',lineMID]
+Family=["uc66e45201d1612eb4ce7b3a86bac4685"]
+admin=["uc66e45201d1612eb4ce7b3a86bac4685"]
 RfuFamily = RfuBot + Family
 
 protectname = []
@@ -592,7 +592,7 @@ def lineBot(op):
                 elif text.lower() == 'ไลน':
                     try:
                         arr = []
-                        owner = "ubd78f3da598d3c32e075e062e88545ec"
+                        owner = "uc66e45201d1612eb4ce7b3a86bac4685"
                         creator = line.getContact(owner)
                         contact = line.getContact(lineMID)
                         grouplist = line.getGroupIdsJoined()
@@ -617,7 +617,7 @@ def lineBot(op):
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
 #==============================================================================#
-                elif text.lower() == 'เชคค่า':
+                elif text.lower() == 'Set':
                     try:
                         ret_ = "      ꧁❈§{MAI}§❈꧂ "
 
